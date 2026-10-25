@@ -2,6 +2,45 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+  
+init python:
+    def text_beep_callback_Male(event, interact=True, **kwargs):
+        if not interact:
+            return
+        if event == "show":
+            renpy.music.play("audio/sfxblipmale.wav", channel="sound", loop=True)
+        elif event in ("slow_done", "end"):
+            renpy.music.stop(channel="sound")
+
+init python:
+    def text_beep_callback_Female(event, interact=True, **kwargs):
+        if not interact:
+            return
+        if event == "show":
+            renpy.music.play("audio/sfxblipfemale.wav", channel="sound", loop=True)
+        elif event in ("slow_done", "end"):
+            renpy.music.stop(channel="sound")            
+
+
+transform shake_side:
+    subpixel True
+
+    xoffset 0
+    yoffset 0
+
+    linear 0.07 xoffset -20 yoffset 10
+    linear 0.07 xoffset  20 yoffset -10
+    linear 0.07 xoffset -16 yoffset 9
+    linear 0.07 xoffset 16  yoffset -9
+    linear 0.07 xoffset -12 yoffset 7
+    linear 0.07 xoffset 12  yoffset -7
+    linear 0.07 xoffset -8
+    linear 0.07 xoffset 8
+    linear 0.00 xoffset 0 yoffset 0
+
+    # Return to the original position so Ash doesn't stay offset
+    linear 0.04 xoffset 0
+
 
 init python:
     
@@ -61,7 +100,9 @@ init python:
  
 define sshake = Shaker((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
 
-define Ash = Character('Ash', color="#c8ffc8")
+define Ash = Character('Ash', color="#004B49", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/Named Male/Ash/ash smile.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define Ex = Character('???', color="#5C0120", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/extra/ex smile1.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define G1 = Character('???', colour="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 
 image ash normal:
     "images/Named Male/Ash/ash normal.png"
@@ -82,6 +123,44 @@ image ash smirk:
 image ash angry1:
     "images/Named Male/Ash/ash angry1.png"
     zoom 0.5
+
+image ex surprised: 
+    "images/extra/ex surprised.png"
+    zoom 0.5
+
+
+image ex angry: 
+    "images/extra/ex angry.png"
+    zoom 0.5
+
+
+image ex angry2: 
+    "images/extra/ex angry2.png"
+    zoom 0.5
+
+
+image ex laughnerv: 
+    "images/extra/ex laughnerv.png"
+    zoom 0.5
+
+
+ 
+image jess angry: 
+    "images/jess/jess angry.png"
+    zoom 0.5
+
+
+image jess pout: 
+    "images/jess/jess pout.png"
+    zoom 0.5
+
+
+image jess shocked: 
+    "images/jess/jess shocked.png"
+    zoom 0.5
+
+
+
 
 # The game starts here.
 
@@ -144,44 +223,216 @@ label start:
   scene bg stm with fade
 
   show ash normal at left with dissolve
-
-  "Ash" "{w=1.5}{cps=20} How long has it been since I ever went outside?{/cps}"
-  play sound "audio/MetalAlert.mp3" volume 1
+  play audio "audio/packstation.mp3" volume 0.3
+  Ash "{w=1.5}{cps=20} How long has it been since I ever went outside?{/cps}"
+  play audio "audio/MetalAlert.mp3" volume 1
   
   show ash surprised at left with dissolve
 
-  "Ash" "{cps=20}!!!{/cps}" 
-
-  play music "audio/1/papercup.mp3"
+  Ash "{cps=20}!!!{/cps}" 
+  
+  play music "audio/1/papercup.mp3" 
    
   show ash smile at left with dissolve
 
-  "Ash" "{cps=20}I can't believe it!{/cps}"
+  Ash "{cps=20}I can't believe it!{/cps}"
   extend "\n{cps=20}This place is even better than what I Imagined.{/cps}"
 
   show ash smirk:
     zoom 2
 
-  "Ash" "{cps=24}Well, I'll make sure I won't waste this opportunity!{/cps}"
+  Ash "{cps=24}Well, I'll make sure I won't waste this opportunity!{/cps}"
   extend "\n{cps=24}I'll do my best and rise to the top!{/cps}"  
 
-  "Ash" "{cps=24}Then they'll see!{/cps}"
+  Ash "{cps=24}Then they'll see!{/cps}"
 
   show ash angry1 at left with fade
 
-  "Ash" "{w=1}{cps=24}But first. I'll have to deal with day to day life.{/cps}"
+  Ash "{w=1}{cps=24}But first. I'll have to deal with day to day life.{/cps}"
+
+  show ash surprised at left, shake_side
+  play audio "audio/fall2.mp3"
+  Ash "{cps=24}?!?!?!?!{/cps}" with Shake((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
+
+  Ash "{w=1.5}{cps=24} what was that?{/cps}"
+
+  pause 1.5 
+
+  scene bg stm with dissolve
+
+  # MultiCharacter Reference:
+  #image ex surprised = "extra/ex surprised.png"
+  #image ex angry = "extra/ex angry.png"
+  #image ex angry2 = "extra/ex angry2.png"
+  #image ex laughnerv = "extra/ex laughnerv.png"
+ 
+  #image jess angry = "jess/jess angry.png"
+  #image jess pout = "jess/jess pout.png"
+  #image jess shocked = "jess/jess shocked.png"
+
+  show jess angry:
+      xpos 1.0 xanchor 1.0
+      yalign 1.0
+
+  show ex surprised:
+      xpos 0.7 xanchor 1.0
+      yalign 1.0
+  
+  pause 0.75
+   
+  show ex angry:
+      xpos 0.7 xanchor 1.0
+      yalign 1.0
+  
+  pause 0.25
+
+  show ex angry2:
+      xpos 0.7 xanchor 1.0
+      yalign 1.0
+ 
+  play audio "Roxysen.mp3"
+
+  Ex "{cps=33}WHY THE {b}####{/b} DID YOU PUNCH ME, YOU STUPID {b}##### !!!{/b}.{/cps}{w=1}{nw}"
+
+  G1 "{w=1}{cps=27}Scum like you tend to harrass others,{/cps}{w=0.75}{nw}"
+  extend "\n{cps=27}Then you dare ask why you get punished. How expectedly pitiful!{/cps}"
+
+  scene bg hnl
+  play audio "zeldaitem.mp3"
+  "Well, That's it for now folks! The demo is over!{nw}"
+  extend "\n{cps=27}Please feel free to rate us 5 stars and share with all your friends! Until we meet next time!{/cps}"
+
+  
+  
+
+  
+  
 
 
-show ash surprised at left 
-"Ash" "{cps=24}?!?!?!?!{/cps}" with Shake((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
+  
 
-"Ash" "{w=1.5}{cps=24} what was that?{/cps}"
-    
   
 
 
 
 
 
-return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
   
