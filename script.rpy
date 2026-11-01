@@ -682,13 +682,254 @@ show miho openblush at right with dissolve
 M1 "{cps=37}S-SAME HERE!!!{/cps}{nw}{w=0.5}"
 extend "\n{cps=25}I'll be...counting on you.{/cps}{w=0.5}"
 
-"meow"
+centered "Insert the sound of a cat"
 
+show ash surprised at left with dissolve
+show miho frown at right with dissolve
 
+Ash"{cps=30}Did you hear that?!{/cps}"
 
+M1 "{cps=30}Yeah, It's what I was dealing wih earlier.{/cps}"
+extend "\n{cps=30}It came from under the boxes{/cps}"
 
+#Meow sound plays again
 
+"{cps=30}A little orange ball, or what seems to be the head of a cat pops out of the cardboard{/cps}"
 
+show miho smileblush at right with dissolve
+
+M1 "{cps=70}KITTTYYYYYY!!!!!!!!!!! AWWWW!!!{/cps}{w=0.5}{nw}"
+extend "\n{cps=30}Ash, look!!! It's so small and so friggin cute!"
+
+default catfed = False
+
+show ash confused at left with dissolve
+
+Ash "{cps=30}Is that yours by chance?{/cps}"
+
+M1 "{cps=30}No...{/cps}{w=0.75}{nw}"
+extend "\n{cps=30}I spotted it, and I was trying to grab it when I tripped earlier.{/cps}"
+
+show ash weirded at left with dissolve
+
+Ash "{cps=30}I know you for like 5 minutes, but I already know that it's typical of you to trip and kill us both by accident.{/cps}"
+extend "\n{cps=30}Just for the sake of, that thing.{/cps}"
+
+M1 "{cps=30}Don't call it a thing! It's a Cat, It has feelings like us y'know!{/cps}"
+
+menu:
+    "Crouch down to offer it a hand":
+     jump choice2hand
+    "Look around the apartment for Catfood":
+     jump choice2food
+    "Tell Miho that we can't keep it":
+     jump choice2nokeep
+
+label choice2hand:
+
+    $ M1Affection += 1
+    $ catfed = False
+
+    show ash smile at left with dissolve
+
+    Ash "{cps=30}Hey there, Little guy..or girl. Sorry for scaring you.{/cps}"
+
+    "{cps=30}The cat sniffs my fingers, and then rubs it's head against my open hand.{/cps}"
+
+    M1 "{cps=30}It likes you, it seems...{/cps}{w=0.75}{nw}"
+    extend "\n{cps=30}I'm a bit jealous...{/cps}"
+
+    jump choice2common
+
+label choice2food:
+
+    $ M1Trust += 1
+    $ catfed = True
+
+    show ash normal at left with dissolve
+
+    Ash "{cps=30}Give me a few seconds. There might be something in the kitchen.{/cps}"
+
+    "{cps=30}Ash finds a few unopened cans of tuna in the cupboard. Looks like the people living here before left it behind.{/cps}"
+
+    show miho open at right with dissolve
+    
+    M1 "{cps=30}Good thinking Ash!{/cps}{w=0.5}{nw}"
+    extend "\n{cps=30}I've known {b}you{/b} for like five minutes, and you're already showing off.{/cps}"
+
+    jump choice2common
+
+label choice2nokeep:
+
+    $ M1Affection -= 1
+    $ catfed = False
+
+    show  ash weirded at left with dissolve
+
+    Ash "{cps=30}We don't even know if pets are allowed, what if someones allergic?{/cps}"
+
+    show miho frownblush at right with dissolve
+
+    M1 "{cps=30}You're so cold...{/cps}{w=0.75}{nw}"
+    extend "\n{cps=30}Look at those eyes!!!!{/cps}"
+
+    Ash "{cps=30}I'm not saying we should get rid of it! More like ask for permission first.{/cps}"
+
+    M1 "{cps=30}...fine.{/cps}"
+
+    jump choice2common
+
+label choice2common:
+  #Temporary/Unrefined story after this part
+  #Doorbell sfx plays
+   centered "#Doorbell sfx plays"
+
+   centered "{cps=30}{b}Ding-Dong.{/b}{/cps}"
+
+   show ash surprised at left with dissolve
+   show miho frown at right with dissolve
+
+   M1 "{cps=30}Another roommate maybe?{/cps}"
+
+   Ash "{cps=30}Only one way to find out.{/cps}"
+
+   scene bg hem with fade
+
+   show ash normal at left with moveinleft
+
+   pause 0.75
+
+   #Door opening SFX
+   centered "Insert Door opening SFX"
+
+   show jess pout:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+   with dissolve
+
+   pause 1.0
+
+   show ash surprised at left with dissolve
+
+   Ash "{cps=30}It's....You.{/cps}"
+
+   G1 "{cps=30}You....Peasant!{/cps}{w=1}{nw}"
+   extend "\n{cps=30}Of all the realms I could've ended up with in this accursed city!{/cps}"
+
+   Ash "{cps=30}You're the girl from the station!{/cps}"
+
+   G1 "{cps=30}And you are the unsightly peasant from the station.{/cps}"
+   extend "\n{cps=30}Were you seriously following me all the way here?{/cps}"
+    
+   show ash confused at left with dissolve
+
+   Ash "{cps=30}I think you're the one who showed up at {i}my{/i} door{/cps}"
+   
+   show jess angry:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+
+   G1 "{cps=30}{i}Your{/i} door? What utter nonsense!{/cps}{w=0.5}{nw}"
+   extend "\n{cps=30}This is apartment 4 of dormitory F&M of the haruno allotment, and I have it written in my letter!"
+    
+   #miho steps in, animate it in the future when I have money
+
+   show miho openblush at center with moveinright
+
+   M1 "{cps=30}Umm...the Haruno you mentioned, is me. So that means...{/cps}{w=0.75}{nw}"
+   extend "\n{cps=30}we're roommates? Tadaa...{/cps}"
+
+   Ash "{cps=30}And when you finish reading the fine print, my name is just after hers.{/cps}"
+
+   show jess shocked:
+     xpos 1.0 xanchor 1.0
+     yalign 1.0
+
+   G1 "{cps=30}Roommates{/cps}{w=1}{nw}"
+   extend "\n{cps=30}with {i}him{/i}.{/cps}"
+
+menu:
+    "Welcome her Warmly and politely":
+      jump choice3welcome
+    "Tell her you won't be a nuisance or cause trouble":
+      jump choice3trouble
+    "Tease her about 'Farewell, peasant!'":
+      jump choice3tease
+
+label choice3welcome:
+
+    $ G1Respect += 1
+    $ G1Trust += 1
+
+    show ash smile at left with dissolve
+
+    Ash "{cps=30}Well, welcome home. Come in mi'lady, I'll help with your bags.{/cps}"
+
+    show jess pout:
+        xpos 1.0 xanchor 1.0
+        yalign 1.0
+
+    G1 "{cps=30}...I did not ask for your help.{/cps}{w=1}{nw}"
+    extend "\n{cps=30}However I will not refuse such treatment. Consider it my appreciation of your manners.{/cps}"
+
+    jump choice3common
+
+label choice3trouble:
+
+    $ G1Trust +=1
+    $ G1Suspicion +=1
+
+    show ash normal at left with dissolve
+
+    Ash "{cps=30}Look, I don't want to cause you any harm, Nor do I harbour any ill thoughts towards you.{/cps}"
+    extend "{cps=30}\nI'm just trying to focus on my own studies and life!{/cps}"
+    
+    show jess pout:
+     xpos 1.0 xanchor 1.0
+     yalign 1.0
+
+    G1 "{cps=30}Hmph. I'll be the judge of that.{/cps}"
+
+    jump choice3common
+
+label choice3tease:
+
+    $ G1Respect -= 1
+    $ G1Disgust += 1
+    $ M1Affection += 1
+    # Secret feelings(It will change the game)
+
+    show ash smirk at left with dissolve
+
+    Ash "{cps=30}Farewell, peasant, huh? How is my liege stooping so low to live amoung commoners now?{/cps}"
+
+    show miho smile at center with dissolve
+
+    M1 "{cps=30}Pffft-{/cps}"
+
+    show jess angry:
+      xpos 1.0 xanchor 1.0
+      yalign 1.0
+
+    G1 "{cps=60}DON'T LAUGH!{/cps}"
+
+    jump choice3common
+    
+label choice3common:
+
+Ash "MIHO Y'KNOW WHAT TIME IT IS?"
+
+M1 "WHAT TIME IS IT ASH?"
+
+G1 "YEAH! WHAT TIME IS IT PEASANT? WHY ARE WE SCREAMING?"
+
+Ash "IT'S TIME FOR THE DEMO TO END AND FOR OUR CREATOR TO GET SOME ZZZ'S AND SLEEP!"
+
+scene bg hnl
+
+"Well Thanks for joining us once again, I need to sleep so I won't say much!"
+"Also, the lack of music and effect placeholders is on purpose, the creator doesn't have/can't afford a drawing tab at the moment"
+extend "\nNor can he pay you glorious fellows to do it so for now he's going to cry himself to sleep. Goodnight!! We'll work on Sound effects next time!!!"
 
 
 
