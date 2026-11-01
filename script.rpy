@@ -102,7 +102,18 @@ define sshake = Shaker((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
 
 define Ash = Character('Ash', color="#004B49", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/Named Male/Ash/ash smile.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define Ex = Character('???', color="#5C0120", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/extra/ex smile1.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define G1 = Character('???', colour="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define G1 = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define SM = Character('Crowd', color="#004B49", callback=text_beep_callback_Male)
+define SW = Character('Crowd', color="#004B49", callback=text_beep_callback_Female)
+
+default G1Affection = 0
+default G1Trust = 0
+default G1Respect = 0
+default G1Fear = 0
+default G1Friendship = 0
+default G1Love = 0
+default G1Suspicion = 0
+default G1Disgust = 0
 
 image ash normal:
     "images/Named Male/Ash/ash normal.png"
@@ -122,6 +133,14 @@ image ash smirk:
 
 image ash angry1:
     "images/Named Male/Ash/ash angry1.png"
+    zoom 0.5
+
+image ash confused:
+    "images/Named Male/Ash/ash confused.png"
+    zoom 0.5
+
+image ash weirded:
+    "images/Named Male/Ash/ash weirded.png"
     zoom 0.5
 
 image ex surprised: 
@@ -272,7 +291,7 @@ label start:
 
   show jess angry:
       xpos 1.0 xanchor 1.0
-      yalign 1.0
+      yalign 1.0 
 
   show ex surprised:
       xpos 0.7 xanchor 1.0
@@ -297,66 +316,175 @@ label start:
   G1 "{w=1}{cps=27}Scum like you tend to harrass others,{/cps}{w=0.75}{nw}"
   extend "\n{cps=27}Then you dare ask why you get punished. How expectedly pitiful!{/cps}"
 
-  scene bg hnl
-  play audio "zeldaitem.mp3"
-  "Well, That's it for now folks! The demo is over!{nw}"
-  extend "\n{cps=27}Please feel free to rate us 5 stars and share with all your friends! Until we meet next time!{/cps}"
+  # scene bg hnl
+  # play audio "zeldaitem.mp3"
+  # "Well, That's it for now folks! The demo is over!{nw}"
+  # extend "\n{cps=27}Please feel free to rate us 5 stars and share with all your friends! Until we meet next time!{/cps}"
 
+  Ex "{cps=33}THAT'S CRAZY FOR SOMEONE WHOSE GONNA GET HER LIGHTS KNOCKED OUT TO SAY!{/cps}"
+
+  G1 "{cps=27}Sure, Go Ahead!"
+  extend "\n{cps=27}I'd like to see you try!{cps=27}"
+
+  Ex "{cps=33}YOU-{/cps}"
+
+  SM "{cps=37}DUDE! YOU'RE GONNA REGRET PICKING A FIGHT WITH HER! SHE'S THE DAUGHTER OF A MEGACORPO.{/cps}" 
+  SW "\n{cps=38} THAT'S THE LIKE THE YAKUZA WITH LEGAL PROTECTION YO!{/cps}" 
+  SM "\n{cps=38} YEAH DUDE!, HER DAD'S GONNA KILL YOU!{/cps} "
+
+  show ex surprised
+
+  pause .5
+
+  show ex laughnerv
+
+  Ex "{cps=60}Really? I didn't know.{/cps}{w=0.5}{nw}"
   
+  extend "{cps=99}\n Well, I gotta run byee, I'l fight you next time!!!{/cps}{nw}"
+  extend "{cps=100}\n I'll fight you next time!!!{/cps}{nw}"
+
+  play sound "Fullrun.mp3"
+
+  hide ex laughnerv with moveoutleft
+
+  pause 1.5
+
+  stop sound fadeout 0.75 
+
+  show jess pout
+
+  pause 1
+
+  G1 "{cps=27}Coward.{/cps}"
+
+  show ash weirded at left with dissolve
+
+  Ash "{cps=24}Umm...{/cps}"
   
+  show ash surprised
 
+  G1 "{cps=44}What.{/cps}"
+  extend "{cps=44} You here to pick a fight too?{/cps}"
   
-  
+  show ash confused
+
+  Ash "{cps=24}No!No! I just came here to see what all the commotion was about!{/cps}"
+
+ #default G1Affection = 0
+ #default G1Trust = 0
+ #default G1Respect = 0
+ #default G1Fear = 0
+ #default G1Friendship = 0
+ #default G1Love = 0
+ #default G1Suspicion = 0
+ #default G1Disgust = 0
 
 
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+label choices1:  
+  G1 "{cps=44}Oh, I see.{/cps}"
+  extend "\n{cps=44}You just happened to be in the right place at the right time, huh?{/cps}"
+  extend "\n{cps=44}Do you take me for a fool?{/cps}"
+menu: 
+    "I think you misunderstood me. I really was just passing by.":
+        jump choices1A
+    "Woah, you're taking this a bit too far miss, I was curious and wanted to see what was going on.":
+        jump choices1B
+    "...":
+        jump choices1C
 
 
 
+label choices1A:
 
+    $ G1Respect -= 1
+    $ G1Trust += 1
 
+    G1 "{cps=44}An idiot, just like everyone else.{/cps}"
 
+    jump choices1common
 
+label choices1B:
+    $ G1Trust += 1
+    $ G1Respect += 1
 
+    G1 "{cps=44}I'll...{/cps}"
+    extend "\n{cps=44}believe you for now.{/cps}"
+    
+    jump choices1common
 
+label choices1C:
+    $ G1Trust -= 1
+    $ G1Respect -= 1
 
+    G1 "{cps=44}Not so keen on conversation, huh?{/cps}"
+    extend "\n{cps=44} I'll take that as a sign of your guilt.{/cps}"
+    
+    jump choices1common
 
+label choices1common:
 
+  if G1Trust == 1 and G1Respect == -1:
+   G1 "{cps=44}It doesn't make much talking to someone like you.{/cps}"
+   jump result1common
 
+  elif G1Trust == 1 and G1Respect == 1:
+   G1 "{cps=44}I have to go.{/cps}"
+   extend "\n{cps=44}My time is too precious to waste on someone like you.{/cps}"
+   jump result1common
 
+  else: 
+   G1 "{cps=44}I hope we never cross paths ever again.{/cps}"
+   jump result1common
 
+label result1common:
+ G1 "{cps=44}Farewell, peasant!{/cps}"
 
+ hide jess pout with dissolve
+ hide ash weirded with dissolve
 
+ show bg stm: 
+    blur 25
+ with dissolve
 
+ 
+ centered "{color=#F5BD02}{outlinecolor=#000000}{cps=45}{b}She moves towards the road gracefully.{/b}{w=1}{size=45}{/cps}{/color}{outlinecolor=#000000}"
+ 
+ play sound "audio/CarDoor.mp3" volume 1 
 
+ pause 2
 
-  return
+ play sound "audio/CarStart.mp3" volume 0.25 fadeout 1.5
+
+ centered "{color=#F5BD02}{outlinecolor=#000000}{cps=45}{b}A nice car with mens in suits shows up and the girl gets in, driving away without a second glance.{/b}{w=1.5}{size=45}{/cps}{/color}{outlinecolor=#000000}"
+ 
+ pause 1.5
+
  
 
+
+ show bg stm:
+   blur 0
+
+ show ash confused at left with dissolve
+ 
+ pause 1.5
+ 
+ Ash "{cps=24}Well, that was certainly interesting.{/cps}"
+ Ash "{cps=24}I should probably head to my new place now though.{/cps}"
+
+ show ash weirded at left with dissolve
+ 
+ hide ash confused with moveoutright
+
+ Ash "{cps=24}I'm on my way.{/cps}"
+ 
+scene bg apcm with fade
+
+show ash normal at left with moveinleft
+
+"{cps=24}I guess this is the place where I'll be living for the time being.{/cps}"
+
+ 
 
 
 
