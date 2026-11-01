@@ -103,8 +103,10 @@ define sshake = Shaker((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
 define Ash = Character('Ash', color="#004B49", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/Named Male/Ash/ash smile.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define Ex = Character('???', color="#5C0120", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/extra/ex smile1.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define G1 = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define SM = Character('Crowd', color="#004B49", callback=text_beep_callback_Male)
-define SW = Character('Crowd', color="#004B49", callback=text_beep_callback_Female)
+define Ms = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define M1 = Character('Miho', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define SM = Character('Crowd', color="#F984EF", callback=text_beep_callback_Male)
+define SW = Character('Crowd', color="#F984EF", callback=text_beep_callback_Female)
 
 default G1Affection = 0
 default G1Trust = 0
@@ -114,6 +116,15 @@ default G1Friendship = 0
 default G1Love = 0
 default G1Suspicion = 0
 default G1Disgust = 0
+
+default M1Affection = 0
+default M1Trust = 0
+default M1Respect = 0
+default M1Fear = 0
+default M1Friendship = 0
+default M1Love = 0
+default M1Suspicion = 0
+default M1Disgust = 0
 
 image ash normal:
     "images/Named Male/Ash/ash normal.png"
@@ -178,8 +189,33 @@ image jess shocked:
     "images/jess/jess shocked.png"
     zoom 0.5
 
+image jess shocked: 
+    "images/jess/jess shocked.png"
+    zoom 0.5
 
+image miho smile:
+    "images/miho/Miho Winter Uniform/Miho smile.png"
+    zoom 0.18
 
+image miho smileblush:
+    "images/miho/Miho Winter Uniform/Miho smileblush.png"
+    zoom 0.18
+
+image miho frown:
+    "images/miho/Miho Winter Uniform/Miho frown.png"
+    zoom 0.18
+
+image miho frownblush:
+    "images/miho/Miho Winter Uniform/Miho frownblush.png"
+    zoom 0.18
+
+image miho open:
+    "images/miho/Miho Winter Uniform/Miho open.png"
+    zoom 0.18
+
+image miho openblush:
+    "images/miho/Miho Winter Uniform/Miho openblush.png"
+    zoom 0.18
 
 # The game starts here.
 
@@ -355,20 +391,20 @@ label start:
 
   pause 1
 
-  G1 "{cps=27}Coward.{/cps}"
+  G1 "{cps=27}Coward.{/cps}{nw}{w=1}"
 
   show ash weirded at left with dissolve
 
-  Ash "{cps=24}Umm...{/cps}"
+  Ash "{cps=24}Umm...{/cps}{w=1}"
   
   show ash surprised
 
-  G1 "{cps=44}What.{/cps}"
-  extend "{cps=44} You here to pick a fight too?{/cps}"
+  G1 "{cps=30}What.{w=1.0}{nw}{/cps}"
+  extend "\n{cps=30}You here to pick a fight too?{/cps}{nw}{w=1.5}"
   
   show ash confused
 
-  Ash "{cps=24}No!No! I just came here to see what all the commotion was about!{/cps}"
+  Ash "{cps=24}No! No! I just came here to see what all the commotion was about!{/cps}"
 
  #default G1Affection = 0
  #default G1Trust = 0
@@ -424,19 +460,20 @@ label choices1C:
 label choices1common:
 
   if G1Trust == 1 and G1Respect == -1:
-   G1 "{cps=44}It doesn't make much talking to someone like you.{/cps}"
+   G1 "{cps=44}It doesn't make much talking to someone like you.{/cps}{w=1.5}"
    jump result1common
 
   elif G1Trust == 1 and G1Respect == 1:
-   G1 "{cps=44}I have to go.{/cps}"
-   extend "\n{cps=44}My time is too precious to waste on someone like you.{/cps}"
+   G1 "{cps=44}I have to go.{/cps}{nw}"
+   extend "\n{cps=44}My time is too precious to waste on someone like you.{/cps}{w=1.5}"
    jump result1common
 
   else: 
-   G1 "{cps=44}I hope we never cross paths ever again.{/cps}"
+   G1 "{cps=44}I hope we never cross paths ever again.{/cps}{w=1.5}"
    jump result1common
 
 label result1common:
+ pause 1.0
  G1 "{cps=44}Farewell, peasant!{/cps}"
 
  hide jess pout with dissolve
@@ -447,7 +484,7 @@ label result1common:
  with dissolve
 
  
- centered "{color=#F5BD02}{outlinecolor=#000000}{cps=45}{b}She moves towards the road gracefully.{/b}{w=1}{size=45}{/cps}{/color}{outlinecolor=#000000}"
+ centered "{color=#F5BD02}{outlinecolor=#000000}{cps=45}{b}She moves towards the road gracefully.{/b}{w=1}{size=45}{/cps}{/color}{outlinecolor=#000000}{nw}"
  
  play sound "audio/CarDoor.mp3" volume 1 
 
@@ -455,7 +492,7 @@ label result1common:
 
  play sound "audio/CarStart.mp3" volume 0.25 fadeout 1.5
 
- centered "{color=#F5BD02}{outlinecolor=#000000}{cps=45}{b}A nice car with mens in suits shows up and the girl gets in, driving away without a second glance.{/b}{w=1.5}{size=45}{/cps}{/color}{outlinecolor=#000000}"
+ centered "{color=#F5BD02}{outlinecolor=#000000}{cps=45}{b}A nice car with mens in suits shows up and the girl gets in, driving away without a second glance.{/b}{w=1.5}{size=45}{/cps}{/color}{outlinecolor=#000000}{nw}"
  
  pause 1.5
 
@@ -470,25 +507,182 @@ label result1common:
  pause 1.5
  
  Ash "{cps=24}Well, that was certainly interesting.{/cps}"
+
  Ash "{cps=24}I should probably head to my new place now though.{/cps}"
 
  show ash weirded at left with dissolve
- 
+
  hide ash confused with moveoutright
 
  Ash "{cps=24}I'm on my way.{/cps}"
  
-scene bg apcm with fade
+ centered "{color=#000000}{outlinecolor=#000000}{cps=45}{b}An hour and half of walking later...{/b}{w=1.5}{size=45}{/cps}{/color}{outlinecolor=#000000}{nw}"
 
-show ash normal at left with moveinleft
+ scene bg apcm with fade
 
-"{cps=24}I guess this is the place where I'll be living for the time being.{/cps}"
+ show ash normal at left with moveinleft
 
+ Ash "{cps=24}I guess this is the place where I'll be living for the time being.{/cps}"
+
+ Ash "{cps=24}I heard some weird voice.{/cps}{nw}{w=1}"
+ extend "\n{cps=24}What even was that exactly?{/cps}{w=1}{nw}"
+ extend "\n{cps=24}Sounded like some sort of brawl, then a squeak.{/cps}"
+
+#add door sound effect
+ play sound "audio/dooropen.mp3" volume 0.5
+
+ pause 1.0
+
+ Ash "{cps=25}I just hope the place is decent enough to live in.{/cps}{w=0.75}{nw}"
+ extend "\n{cps=25}Well, I've dealt with worse before, but still would be nice.{/cps}"
+
+ scene bg hem with dissolve
+
+ show ash weirded at left with dissolve
+ 
+ Ash "{cps=25}Judging from the corridor, this place seems decent enough.{/cps}{w=0.75}{nw}"
+ extend "\n{cps=25}It's better than my old place, that's for sure.{/cps}"
+
+ pause 1
+
+ hide ash weireded at left with moveoutright 
+ 
+ pause 1
+
+ scene bg lrm with fade
+
+ show ash surprised at left with moveinleft
+
+ Ash "{cps=25}Woah, this place is even better than I could have imagined!{/cps}"
+
+ Ash "{cps=25}But even considering the scholarship grant, isn't this place a bit too expensive for one person?{/cps}"
+
+#add BoxesCrashing soundeffect
+centered "INSERT NON COPYRIGHT BOXES CRASHING SFX"
+#add then girl appearing and crashing into Mc effect
+centered "INSERT NON COPYRIGHT GIRL CRASHING INTO MC EFFECT"
+
+Ash "{cps=20}I think I spoke too soon...{/cps}"
+
+Ms "{cps=7}Owww....!?{/cps}" 
+
+Ash "{cps=25}Excuse me, are you okay?{/cps}"
+
+Ash "{cps=25}And I don't mean to be rude, but who are you and what are you doing here?{/cps}"
+
+show bg lrm:
+   blur 25
+with fade
+
+
+centered "{color=#000000}{outlinecolor=#000000}{cps=45}{b}The girl with brown hair laying on the floor, notices your presence, turns her head and looks towards you.{/b}{w=1.5}{size=45}{/cps}{/color}{outlinecolor=#000000}{nw}"
  
 
+show bg lrm:
+   blur 0
+with fade
+
+show miho smile:
+      xpos 0.7 xanchor 1.0
+      yalign 1
+      yoffset 500
 
 
 
+
+Ms "{cps=5}....Huh?{/cps}"
+
+show miho frown at right with dissolve
+
+Ms "{cps=55}AHHHHHH!{/cps}{nw}"
+extend "\n{cps=55}IT'S A PERVERT!! HELP ME!!! GET AWAY FROM ME!!!!!{/cps}{nw}{w=1}"
+
+Ash "{cps=90}WAIT A MINUTE! I'M NOT A PERVERT!{/cps}{nw}{w=1}"
+
+Ms "{cps=98}YEAH! THAT'S EXACTLY WHAT A PERV WHO SNEAKS INTO THE WOMEN'S DORMS LIKE A CLICHE ANIME WOULD SAY!{/cps}{nw}{w=1.45}"
+
+Ash "{cps=101}YOU'VE GOT TO BELIEVE ME! I JUST GOT ASSIGNED THIS APARTMENT FOR XY ACADEMY OF N-LEARNING{/cps}{nw}{w=1.45}"
+
+Ms "{cps=70}HAH NICE TRY BUT-{/cps}{nw}{w=2}"
+extend "\n{cps=79}Wait what.{/cps}{nw}{w=1}"
+
+Ms "{cps=57}Did you just say\"XY Academy of N-Learning\"?{/cps}{nw}{w=1.5}"
+extend "\n{cps=57}But that's where I go to.....{/cps}{nw}{w=1.5}"
+
+Ash "{cps=57}Look Miss, there's clearly been some sort of confusion.{/cps}{nw}{w=1.5}"
+extend "\n{cps=57}This is supposed to be the room alloted to me.{/cps}{nw}{w=1.5}"
+
+Ms "{cps=57}but this is my apartment!{/cps}{nw}{w=1}"
+extend "\n{cps=57}See! It says that right here on my admission guide letter and pamphlet!{/cps}{nw}{w=1}"
+
+show ash confused at left with dissolve
+
+Ash "{cps=57}huh...It does...{/cps}{nw}{w=1.5}"
+extend "\n{cps=57}but...So does mine?{/cps}{nw}{w=1.5}"
+
+show ash weirded at left with dissolve
+
+Ms "{cps=57}Something... is off...{/cps}{nw}{w=1.5}"
+extend "\n{cps=57}Yeah...{/cps}{nw}{w=1.5}"
+
+Ash "{cps=77}Wait, Check the fine print!{/cps}{nw}{w=1.6}"
+
+Ms "{cps=77}You're right....{/cps}{nw}{w=1.5}"
+extend "\n{cps=77}Partially.{/cps}{nw}{w=1.5}"
+
+Ms "{cps=57}This apartment has indeed been allotted to the both of us.{/cps}{nw}{w=1.5}"
+extend "\n{cps=57}But only some of the rooms are ours. We're supposed to have 4 more roommates.{/cps}{nw}{w=1.5}"
+
+Ash "{cps=47}That...makes a lot more sense.{/cps}{nw}{w=1.5}"
+
+show ash normal at left with dissolve
+
+Ms "{cps=37}I'm very sorry for the way I behaved.{/cps}{nw}{w=1.5}"
+extend "\n{cps=77}I was just very surprised and frigtened.{/cps}{nw}{w=1.5}."
+
+show ash smirk at left with dissolve
+
+Ash "{cps=37}Jeez, Am I really that scary?{/cps}{nw}{w=1.5}"
+
+Ms "{cps=101}NO, I DIDN'T REALLY MEAN THAT IN THAT WAY!{/cps}{nw}{w=1.5}"
+
+show ash smile at left with dissolve
+
+Ash "{cps=35}I'm just kidding. Calm down miss.{/cps}{w=1.5}"
+
+Ash "{cps=33}Anyways, We may have skipped the formalities but...{/cps}{w=1.5}"
+
+Ash "{cps=32}My name is Ash. It's nice to meet you.{/cps}{nw}{w=1}"
+extend "\n{cps=31}And to whom do I own the pleasure of conversing with?{/cps}{w=1}"
+
+Ms "{cps=30}That's such an old, but gentlemenly and sweet way of asking.{/cps}{nw}{w=1}"
+extend "\n{cps=30}Is that how you talk to all women?{/cps}{w=1}"
+
+Ash "{cps=37}Only to the one's I've scared the soul out of.{/cps}{nw}{w=1.5}"
+
+Ms "{cps=33}Jeez, You're never going to let that one go, are you?{/cps}{nw}{w=1.5}"
+extend "\n{cps=57}And here I was being considerate of Mr Potential Stalker or perv.{/cps}{nw}{w=2}"
+
+Ash "{cps=4}HEEEEY!{/cps}"
+
+show miho open at right with dissolve
+
+Ms "{cps=35}Anyways! It's nice to meet you too Ash.{/cps}"
+
+M1 "{cps=35}I'm Miho Haruno. Please take good care of me.{/cps}"
+
+centered "{cps=65}TAKE GOOD CARE OF HER? WHAT IS SHE IMPLYING?{/cps}{w=1}{nw}"
+extend "\n{cps=20}Oh, Yeah. This is Japan.{/cps}{nw}{w=1}"
+extend "\n{cps=20}She probably means she wishes for me to work smoothly and have a good roommate to roomate relationship with her.{/cps}{nw}{w=1}"
+
+Ash "{cps=35}I'll do m-my best, Miss Miho Haruno.{/cps}"
+
+show miho openblush at right with dissolve
+
+M1 "{cps=37}S-SAME HERE!!!{/cps}{nw}{w=0.5}"
+extend "\n{cps=25}I'll be...counting on you.{/cps}{w=0.5}"
+
+"meow"
 
 
 
