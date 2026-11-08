@@ -107,6 +107,9 @@ define Ms = Character('???', color="#00A86B", callback=text_beep_callback_Female
 define M1 = Character('Miho', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define SM = Character('Crowd', color="#F984EF", callback=text_beep_callback_Male)
 define SW = Character('Crowd', color="#F984EF", callback=text_beep_callback_Female)
+define J1 = Character( '???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define J1 = Character( "[Jessname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+
 
 default G1Affection = 0
 default G1Trust = 0
@@ -189,8 +192,12 @@ image jess shocked:
     "images/jess/jess shocked.png"
     zoom 0.5
 
-image jess shocked: 
-    "images/jess/jess shocked.png"
+image jess sleepy: 
+    "images/jess/jess sleepy.png"
+    zoom 0.5
+
+image jess normal: 
+    "images/jess/jess normal.png"
     zoom 0.5
 
 image miho smile:
@@ -689,7 +696,7 @@ show miho frown at right with dissolve
 
 Ash"{cps=30}Did you hear that?!{/cps}"
 
-M1 "{cps=30}Yeah, It's what I was dealing wih earlier.{/cps}"
+M1 "{cps=30}Yeah, It's what I was dealing with earlier.{/cps}"
 extend "\n{cps=30}It came from under the boxes{/cps}"
 
 #Meow sound plays again
@@ -917,36 +924,181 @@ label choice3tease:
     
 label choice3common:
 
-Ash "MIHO Y'KNOW WHAT TIME IT IS?"
+Ash "{cps=30}Anyways!"
+extend "\n{cps=30}Let's try our best to get along, and I mean that for all of us.{/cps}"
 
-M1 "WHAT TIME IS IT ASH?"
+Ash "{cps=30}Not just you and me Princess.{/cps}"
+#add music
+#make art or hire artists
+#fix my sleep schedule
+#Fix Miho PFP
+#Fix dialogue boxing
+#Fix the relationship tree system that you're gonna make since it will be buggy
+#Reduce the file size when it gets big, we love to optimize
 
-G1 "YEAH! WHAT TIME IS IT PEASANT? WHY ARE WE SCREAMING?"
+show jess angry
 
-Ash "IT'S TIME FOR THE DEMO TO END AND FOR OUR CREATOR TO GET SOME ZZZ'S AND SLEEP!"
+G1 "{cps=30}I'll won't end your existence as long as you don't interfere in my affairs.{/cps}"
 
-scene bg hnl
+show jess sleepy
 
-"Well Thanks for joining us once again, I need to sleep so I won't say much!"
-"Also, the lack of music and effect placeholders is on purpose, the creator doesn't have/can't afford a drawing tab at the moment"
-extend "\nNor can he pay you glorious fellows to do it so for now he's going to cry himself to sleep. Goodnight!! We'll work on Sound effects next time!!!"
+G1 "{cps=30}I'm tired. I'm going to go sleep, where's my room?{/cps}"
 
+show jess normal
 
-
-
-
-
-
-
-
-
-
-
+M1 "{cps=30}Actually, We haven't checked out or settled on rooms yet.{/cps}"
 
 
+show jess normal:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+with dissolve
+
+show ash normal at left with dissolve
+show miho smile at center with dissolve
+
+pause 0.5
+
+G1 "{cps=30}Rooms.{/cps}{w=0.5}{nw}"
+extend "\n{cps=30}Fine. Let's settle this now so I can sleep.{/cps}"
+
+Ash "{cps=25}There are six rooms in total.{/cps}{w=0.5}{nw}"
+extend "\n{cps=25}Three of us, so that's three rooms spoken for.{/cps}{w=0.5}{nw}"
+extend "\n{cps=25}That's at least one thing that works out easily.{/cps}"
+
+M1 "{cps=27}Oooh, Can I have the one with windows that face the \"placeholder:Courtyard\"{/cps}{w=0.5}{nw}"
+extend "\n{cps=27}I saw it when I was looking around the place, the one with tons of boxes{/cps}"
+
+G1 "{cps=27}The room at the end of the east hall is mine, got it?{/cps}{w=0.5}{nw}"
+extend "\n{cps=27}I need the most distance possible from... that.{/cps}"
+
+show ash weirded at left with dissolve
+
+Ash "{cps=24}'That' being the living room we're in right now, or 'that' being me?{/cps}"
+
+G1 "{cps=27}Yes.{/cps}"
+
+pause 0.5
+
+show ash smirk at left with dissolve
+
+Ash "{cps=24}Fair enough.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}I'll take whichever one's left. Actually, Can I have the one besides any of you?{/cps}"
+
+G1 "{cps=27}{b}HECK NO{/b}{/cps}"
+extend "\n{cps=27}{i} I {b}KNEW{/b} you were DISGUSTING.{i}{/cps}"
+
+Ash "{cps=24}No need to get angry, I was just asking.{/cps}"
+
+G1 "{cps=27}I know JUST HOW {b}MUCH{/b} YOU WERE ASKING!{/cps}"
+
+Ash "{cps=27}I just wanted the leftover room{/cps}"
+
+M1 "{cps=27}That one's right next to mine, Ash!{/cps}{w=0.5}{nw}"
+extend "\n{cps=27}We'll be neighbors!{/cps}"
+
+Ash "{cps=24}...Great.{/cps}"
+
+M1 "{cps=55}HEY!{/cps}"
+
+show ash smile at left with dissolve
+
+Ash "{cps=24}I'm Kidding.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}Mostly.{/cps}"
+
+pause 0.75
+
+#Note: Jess is less Tsun around cats
+#Add Cat Meow 
+
+"{cps=24}The cat pads in from the hallway and sits in the middle  of the floor.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}It looks at Jess/{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}Jess looks at it.{/cps}"
+
+show jess sleepy:         
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+with dissolve
 
 
+pause 1.0
 
+G1 "{cps=24}...{/cps}{w=1.5}{nw}"
+
+pause 0.5
+
+"{cps=24}She picks it up.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}Just like that.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}No announcement. No ceremony.{/cps}"
+
+show ash confused at left with dissolve
+
+Ash "{cps=24}Are you...{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}Are you keeping it?{/cps}"
+    
+G1 "{cps=24}I'm putting it somewhere warm so it stops making noise.{/cps}{w=0.75}{nw}"
+extend "\n{cps=24}That is all.{/cps}"
+  
+show miho smileblush at center with dissolve 
+
+M1 "{cps=27}She's keeping it.{/cps}"
+
+G1 "{cps=27}I am {b}not{/b} keeping it.{/cps}" 
+
+M1 "{cps=27}She's definitely keeping it.{/cps}"
+
+G1 "{cps=24}I will erase your existence from this plain of perception.{/cps}"
+
+#Note: In the future change her to have a scared expression
+
+M1 "{cps=55}UWAAAH. SO SCARY.{/cps}"
+
+G1 "{cps=24}Well, Anyways. I'm going now.{/cps}"
+
+menu:
+    "Good Night.":
+      jump choice4mono
+    "...":
+      jump choice4lonely
+    "By the way, I...we didn't get your name." if catfed:
+      jump choice4noticed
+
+
+label choice4mono:
+    
+    G1 "{cps=24}...Goodnight creep{/cps}"
+    jump choice4common
+
+label choice4lonely:
+    G1 "{cps=24}Everything...{/cps}"
+
+    Ash "{cps=24}???{/cps}"
+    jump choice4common
+
+label choice4noticed:
+    $ Jessname = "Jess"
+    J1 "{cps=7}Jess.{/cps}{w=0.5}"
+    extend "{cps=17}It's jess.{/cps}"
+    jump choice4common 
+
+
+label choice4common:
+   
+  centered "The quite eccentric girl started to walk away."
+   
+Ash "{cps=24}Wait. Let me carry you bags at least.{/cps}"
+
+J1 "{cps=24}Fine...{/cps}"
+
+M1 "{cps=24}{b}WOAH!{/b}{/cps}{w=0.5}"
+
+M1 "{cps=24}I didn't say this before but the sheer number of your bags. Isn't it too much?{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}And they look heavy too.{/cps}"
+
+J1 "{cps=24}That's...None of your your concern.{/cps}"
+
+centered "They carry the bags to [J1]'s room, at least Ash does, Miho tries and [J1] doesn't bother. "
+with dissolve
 
 
 
