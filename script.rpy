@@ -1430,6 +1430,9 @@ menu:
         jump tstft
 
 label one:
+ scene bg bld
+ k "MY GIFT{nw}"
+ pause 1.0
  play audio "flesh.mp3"
  play audio "scream.mp3"
  show k grin
@@ -1525,8 +1528,10 @@ scene bg alm
 "https://sutemo.itch.io/ for Both Ash and jess"
 "https://noranekogames.itch.io/ for Miho"
 "So a big thanks to Mochikuro, Sutemo, and Noranekogames for making this possible."
+"Mia rosaldo(BlueRoseSonata) https://bluerosesonata.itch.io/free-blood-splatter-cgsfx for blood effects"
 "For BG assets https://min-chi.material.jp/category/fm/bg_c/ was my bestfriend, for sounds https://soundeffect-lab.info/sound/machine/machine2.html, andlast but not least for music https://ontama-m.com/ongaku_soudai.html"
 "All assets used are either copyright free, have a lenient creativecommons license that allows for commercial use, or a fairuse policy"
+
 #add soundeffects
 #add music
 #Fix timings and issues
@@ -1534,4 +1539,5 @@ scene bg alm
 #change variables into one single block, so I don't have to make seperate references each time
 #fix bugs regarding pfp windows
 #explore and use plugins for effects?
-
+#Add blood and gore, lot's of it!!!!!!!!!!!!!!!!!!! for MIO!!!!!!!!!!!!!
+#Make things more spicy and surprising.
