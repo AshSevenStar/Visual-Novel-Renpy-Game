@@ -3,6 +3,19 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
   
+init:
+    style say_dialogue:
+        color "#002C66"
+
+init:
+    style centered_window:
+        background "#0F0F0F60"
+    style centered_text:
+        color "#F5F0E8"
+        size 40
+ 
+#00A87F
+
 init python:
     def text_beep_callback_Male(event, interact=True, **kwargs):
         if not interact:
@@ -213,6 +226,10 @@ image jess sad:
     "images/jess/jess sad.png"
     zoom 0.5
 
+image jess smile2:
+    "images/jess/smile2.png"
+    zoom 0.5
+
 image miho smile:
     "images/miho/Miho Winter Uniform/Miho smile.png"
     zoom 0.18
@@ -239,58 +256,75 @@ image miho openblush:
 
 image k normal:
     "images/Kurogami Mochi/Kurogami Mochi/k normal.png"
+    zoom 0.80
 
 image k cry:
     "images/Kurogami Mochi/Kurogami Mochi/k cry.png"
+    zoom 0.80
 
 image k grin:
     "images/Kurogami Mochi/Kurogami Mochi/k grin.png"
+    zoom 0.80
 
 image k idk:
     "images/Kurogami Mochi/Kurogami Mochi/k idk.png"
+    zoom 0.80
 
 image k mouthleft:
     "images/Kurogami Mochi/Kurogami Mochi/k mouthleft.png"
+    zoom 0.80
 
 image k mouthmiddle:
     "images/Kurogami Mochi/Kurogami Mochi/k mouthmiddle.png"
+    zoom 0.80
 
 image k sad:
     "images/Kurogami Mochi/Kurogami Mochi/k sad.png"
+    zoom 0.80
 
 image k flustered:
     "images/Kurogami Mochi/Kurogami Mochi/k flustered.png"
+    zoom 0.80
 
-images k shut:
+image k shut:
     "images/Kurogami Mochi/Kurogami Mochi/k shut.png"
+    zoom 0.80
 
-images k smile:
+image k smile:
     "images/Kurogami Mochi/Kurogami Mochi/k smile.png"
+    zoom 0.80
 
-images k smileblush:
+image k smileblush:
     "images/Kurogami Mochi/Kurogami Mochi/k smileblush.png"
+    zoom 0.80
 
-images k sus:
+image k sus:
     "images/Kurogami Mochi/Kurogami Mochi/k sus.png"
+    zoom 0.80
 
-images k talk:
+image k talk:
     "images/Kurogami Mochi/Kurogami Mochi/k talk.png"
+    zoom 0.80
 
-images k talkcry:
+image k talkcry:
     "images/Kurogami Mochi/Kurogami Mochi/k talkcry.png"
+    zoom 0.80
 
-images k think:
+image k think:
     "images/Kurogami Mochi/Kurogami Mochi/k think.png"
+    zoom 0.80
 
-images k veye:
+image k veye:
     "images/Kurogami Mochi/Kurogami Mochi/k veye.png"
+    zoom 0.80
 
-images k widesmile:
+image k widesmile:
     "images/Kurogami Mochi/Kurogami Mochi/k widesmile.png"
+    zoom 0.80
 
-images k worry:
+image k worry:
     "images/Kurogami Mochi/Kurogami Mochi/k worry.png"
-
+    zoom 0.80
 
 # The game starts here.
 
@@ -1035,7 +1069,7 @@ extend "\n{cps=25}Three of us, so that's three rooms spoken for.{/cps}{w=0.5}{nw
 extend "\n{cps=25}That's at least one thing that works out easily.{/cps}"
 
 M1 "{cps=27}Oooh, Can I have the one with windows that face the \"placeholder:Courtyard\"{/cps}{w=0.5}{nw}"
-extend "\n{cps=27}I saw it when I was looking around the place, the one with tons of boxes{/cps}"
+extend "\n{cps=27}I saw it when I was looking around the place, the one with tons of boxes.{/cps}"
 
 G1 "{cps=27}The room at the end of the east hall is mine, got it?{/cps}{w=0.5}{nw}"
 extend "\n{cps=27}I need the most distance possible from... that.{/cps}"
@@ -1053,14 +1087,14 @@ show ash smirk at left with dissolve
 Ash "{cps=24}Fair enough.{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}I'll take whichever one's left. Actually, Can I have the one besides any of you?{/cps}"
 
-G1 "{cps=27}{b}HECK NO{/b}{/cps}"
-extend "\n{cps=27}{i} I {b}KNEW{/b} you were DISGUSTING.{i}{/cps}"
+G1 "{cps=27}{b}HECK NO!{/b}{/cps}"
+extend "\n{cps=27}{i}I {b}KNEW{/b} you were DISGUSTING.{i}{/cps}"
 
 Ash "{cps=24}No need to get angry, I was just asking.{/cps}"
 
 G1 "{cps=27}I know JUST HOW {b}MUCH{/b} YOU WERE ASKING!{/cps}"
 
-Ash "{cps=27}I just wanted the leftover room{/cps}"
+Ash "{cps=27}I just wanted the leftover room.{/cps}"
 
 M1 "{cps=27}That one's right next to mine, Ash!{/cps}{w=0.5}{nw}"
 extend "\n{cps=27}We'll be neighbors!{/cps}"
@@ -1168,7 +1202,7 @@ G1 "{cps=24}That's...None of your your concern.{/cps}"
 centered "They carry the bags to [G1]'s room, at least Ash does, Miho tries and [G1] doesn't bother. "
 with dissolve
 
-centered "She takes out a special looking scarlet key, and unlocks the room door"
+centered "She takes out a special looking scarlet key, and unlocks the room door."
 
 M1 "{cps=24}Why do you have that?{/cps}"
 
@@ -1176,9 +1210,9 @@ G1 "{cps=24}Again. That's none of your concern.{/cps}"
 
 centered "The two except [G1] are left stunned as they see the room."
 
-centered "Ash and Miho both shout in unison"
+centered "Ash and Miho both shout in unison."
 
-centered "\"WHAT THE ####\""
+centered "\"WHAT THE ####!\""
 
 show bg rd
 
@@ -1203,11 +1237,11 @@ G1 "{cps=20}Yes?{/cps}"
 
 Ash "{cps=55}How the HELL do you have this!{/cps}"
 
-M1 "{cps=37}YEAH, The other rooms were empty{/cps}"
+M1 "{cps=37}YEAH, The other rooms were empty.{/cps}"
 
 G1 "{cps=24}I guess you can say that being someone of importance has it's merits.{/cps}"
 
-Ash "{cps=55}WHAT'S THAT SUPPOSED TO MEAN. YOU GET THE BUFFET WHILE WE STARVE LIKE ABANDONED KITTENS BESIDES A OLD ARCADE ON A STREET THAT'S BESIDES THE LOCAL RIVER AT DUSK{/cps}"
+Ash "{cps=55}WHAT'S THAT SUPPOSED TO MEAN. YOU GET THE BUFFET WHILE WE STARVE LIKE ABANDONED KITTENS BESIDES A OLD ARCADE ON A STREET THAT'S BESIDES THE LOCAL RIVER AT DUSK!{/cps}"
 
 M1 "{cps=15}Wow.{/cps}{w=0.5}{nw}"
 extend "\n{cps=10}That was {b}really{/b} specific...{/cps}"
@@ -1242,14 +1276,14 @@ show jess sad:
     yalign 1.0
 with dissolve
 
-centered "Her scream surprised even Ash"
+centered "-Her scream surprised even Ash-"
 
-centered "Miho slowly gains conciousness"
+centered "-Miho slowly gains conciousness-"
 
 M1 "{cps=17}No need to scream. I just fainted, that's all.{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}I'm just tired from travelling is all.{/cps}"
 
-centered "They both look a bit reassured but still concerned"
+centered "They both look a bit reassured but still concerned."
 
 G1 "{cps=24}I think you...you....{/cps}"
 
@@ -1274,12 +1308,12 @@ Ash "{cps=24}Huuuuh???{/cps}"
 
 G1 "{cps=24}PERVERT! STALKER! GET OUT!{/cps}"
 
-centered "Ash Had no choice but to retreat as he was being pelted by what one can only presume to be the most massive cases of luggage out of any female on the face of the planet"
+centered "Ash Had no choice but to retreat as he was being pelted by what one can only presume to be the most massive cases of luggage out of any female on the face of the planet."
 
 Ash "{cps=24}That was...Chaotic. And tiring.{/cps}"
-Ash "{cps=24}I should go setup my room{/cps}"
+Ash "{cps=24}I should go setup my room.{/cps}"
 
-centered "Ash promptly so runs to his room and tries his best to move in and make things \"cozy\""
+centered "Ash promptly so runs to his room and tries his best to move in and make things \"{i}cozy{/i}\"."
  
 scene bg mcr
 
@@ -1290,7 +1324,7 @@ extend "\n{cps=24}It's something at least.{/cps}"
 
 show ash weirded at left with dissolve
 
-Ash "{cps=24}I should definitely raise my standards{/cps}"
+Ash "{cps=24}I should definitely raise my standards.{/cps}"
 
 
 "Insert Image of Ash laying on the bed"
@@ -1307,7 +1341,7 @@ extend "\n{cps=24}Isn't a teenage boy supposed to feel that way considering he's
 
 Ash "{cps=24}Or is that just for {i}healthy{/i} teenage boys?{/cps}"
 
-Ash "{cps=24}I thought that at least I would feel my heartrate rise{/cps}"
+Ash "{cps=24}I thought that at least I would feel my heartrate rise.{/cps}"
 
 Ash "{cps=24}But this...{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}feels like nothing at all.{/cps}"
@@ -1320,7 +1354,7 @@ Ash "{cps=24}It's a bit confusing. It's not like I don't like women.{/cps}"
 Ash "{cps=24}Actually it's the contrary but I still don't get why everything isn't the same anymore.{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}It's like my mind, heart and soul are stuck in the past, while this body is moving around like an empty husk.{/cps}"
 
-Ash "{cps=24}That's enough ruminating for now. As they say \"Time waits for none...b..yeah..none\""
+Ash "{cps=24}That's enough ruminating for now. As they say \"Time waits for none...b..yeah..none\"."
 
 centered "Ash closed his eyes. To get a wink of sleep or try to."
 
@@ -1337,7 +1371,7 @@ centered "As Ash moves towards the source of the sound, the shiny object, the so
 
 centered "As he regains his composure, the single knock turns to a relentless torment of knocks, one after the other rythmically."
 
-centered "An overwhelming chill, and the feeling something crawling on Ash's back encompasses him"
+centered "An overwhelming chill, and the feeling something crawling on Ash's back encompasses him."
 
 centered "shaking but undetered, Ash reaches slowly towards the doorknob, glancing at the glass door at the periodically."
 
@@ -1353,26 +1387,122 @@ show ash surprised:
 show k normal:
       xpos 0.25 xanchor 1.0
       yalign 1
+      yoffset 700
+
+k "{cps=37}Surprise...{/cps}"
+
+Ash "{cps=37}Who are you?!!{/cps}"
+
+show ash normal
+
+show k sad
+
+pause 1.25
+
+show k talk
+
+k "{cps=37}Who knows?!"
+
+centered "How did she get in here?"
+centered "Maybe she's a sibling of Miho or Jess?"
+centered "I don't have a good feeling about this..."
+
+k "{cps=37}Looks like you don't remember me huh?{/cps}"
+
+Ash "{cps=37}I'm sorry but I've never met you."
+
+
+menu:
+    "...":
+        jump one
+    "I'll try to remember though! Just In Ca-":
+        jump one
+    "{b}REDACTED{/B}":
+        jump one
+    "Sorry.":
+        jump tstft
+
+label one:
+ show k grin
+ centered "Dead"
+     
+label tstft:
+    "It's...Okay."
+    jump common
+
+label common:
+ 
+k "{cps=37}You don't have to worry. I'm your new roommate.{/cps}{w=0.5}{nw}"
+extend "\n{cps=37}I didn't know what how many people had already arrived, and I didn't know which rooms were occupied so I just knocked on one.{/cps}"
+
+Ash "{cps=37}It might be a bit rude to say but you startled me.{/cps}"
+
+k "{cps=37}Oh, did my little joke scare you that much?{/cps}"
+
+Ash "{cps=37}More or less, I was starting to wonder if I had banged my head.{/cps}"
+
+k "{cps=24}What's your name?{/cps}"
+
+Ash "{cps=24}It's Ash.{/cps}"
+
+show k smile
+
+k "{cps=24}Mine is {b}REDACTED{/b}{/cps}"
+
+Ash "{cps=24}I...didn't get that. Could you repeat it?{/cps}"
+
+k "{cps=24}Oh, It's {b}REDACTED{/b}.{/cps}"
+
+Ash "{cps=24}Let me clean my ears...{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}Now go ahead!{/cps}"
+
+k "{cps=24}Jeez, you're really pushing it mister...but again it's Mio!{/cps}"
+
+Ash "{cps=24}Mio! Got it!{/cps}"
+
+k "{cps=24}Now that you do...I'm gonna rest up.{/cps}"
+
+centered "The girl walks up to the bed, and just dives in."
+extend "\nWithout any concern or worry about who the bed belongs to."
+
+centered "After Ash begged relentlessly she still wouldn't go, insisting he can just sleep on the the other half."
+extend "\nTo which the cultured man declined, and left for the Gula- I mean the Sofa in the living room."
+
+scene bg lrnl
+
+Ash "Not even my first day and I'm getting caught up in trouble and confusion."
+Ash "It's frustrating to not be able to comprehend things."
+Ash "And am I really going crazy or did I really hear that weird buzz instead when she said her name the first few times?"
+Ash "It might just be my sleep deprivation kicking in."
+
+scene bg lrnd
+
+pause 1
+
+centered "After the night passes"
+
+pause 1
+
+scene bg lrm
+
+show ash normal:
+      xpos 0.25 xanchor 1.0
+      yalign 1
+      yoffset 600
+  
+#Add normal clothing
+
+show jess smile2:
+      xpos 1.0 xanchor 1.0
+      yalign 1
       yoffset 600
 
+show miho smile:
+      xpos 0.80 xanchor 1.0
+      yalign 1
+      yoffset 600
 
+scene bg alm
 
-
-k "Meow"
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
+"WELL, THAT'S IT FOR THE DEMO FOLKS"
+"This time Majority of the time went to the story and fixing bugs!"
