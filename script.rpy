@@ -114,19 +114,25 @@ init python:
 define sshake = Shaker((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
 
 default Jessname = "???"
-default K = "0_Null-z-003-7-53|r-B3"
+default Kname = "0_Null-z-003-7-53|r-B3"
 
 define Ash = Character('Ash', color="#004B49", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/Named Male/Ash/ash smile.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define Ex = Character('???', color="#5C0120", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/extra/ex smile1.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define G1 = Character("[Jessname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define Ms = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define M1 = Character('Miho', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define Ms = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(700, 0, 800, 1400), zoom=0.07, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define M1 = Character('Miho', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(700, 0, 800, 1400), zoom=0.07, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define SM = Character('Crowd', color="#F984EF", callback=text_beep_callback_Male)
 define SW = Character('Crowd', color="#F984EF", callback=text_beep_callback_Female)
 #Redundant: #define J1 = Character( '???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 #define J1 = Character( "[Jessname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define k = Character("[K]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/Kurogami Mochi/Kurogami Mochi/k normal.png"), crop=(195, 200, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175))
+define k = Character("[Kname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/Kurogami Mochi/Kurogami Mochi/k normal.png"), crop=(50, 50, 500, 800), zoom=0.10, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175))
 
+style say_side_image:
+        xsize 400
+        ysize 400
+
+
+default catfed = False
 default G1Affection = 0
 default G1Trust = 0
 default G1Respect = 0
@@ -810,7 +816,6 @@ show miho smileblush at right with dissolve
 M1 "{cps=70}KITTTYYYYYY!!!!!!!!!!! AWWWW!!!{/cps}{w=0.5}{nw}"
 extend "\n{cps=30}Ash, look!!! It's so small and so friggin cute!"
 
-default catfed = False
 
 show ash confused at left with dissolve
 
@@ -1076,7 +1081,7 @@ extend "\n{cps=27}I need the most distance possible from... that.{/cps}"
 
 show ash weirded at left with dissolve
 
-Ash "{cps=24}'That' being the living room we're in right now, or 'that' being me?{/cps}"
+Ash "{cps=24}'That' being the room we're in right now, or 'that' being me?{/cps}"
 
 G1 "{cps=27}Yes.{/cps}"
 
@@ -1088,7 +1093,7 @@ Ash "{cps=24}Fair enough.{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}I'll take whichever one's left. Actually, Can I have the one besides any of you?{/cps}"
 
 G1 "{cps=27}{b}HECK NO!{/b}{/cps}"
-extend "\n{cps=27}{i}I {b}KNEW{/b} you were DISGUSTING.{i}{/cps}"
+extend "\n{cps=27}{i}I {b}KNEW{/b} you were DISGUSTING.{/i}{/cps}"
 
 Ash "{cps=24}No need to get angry, I was just asking.{/cps}"
 
@@ -1114,7 +1119,7 @@ pause 0.75
 #Add Cat Meow 
 
 "{cps=24}The cat pads in from the hallway and sits in the middle  of the floor.{/cps}{w=0.5}{nw}"
-extend "\n{cps=24}It looks at Jess/{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}It looks at Jess.{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}Jess looks at it.{/cps}"
 
 show jess sleepy:         
@@ -1337,7 +1342,9 @@ Ash "{cps=24}It's been so long since I've seen someone new, something so... refr
 Ash "{cps=24}So I often think to myself, If what I'm feeling is just obsolete or is it there for a reason?{/cps}"
 
 Ash "{cps=24}Those girls seemed interesting. But, I didn't really feel any sort of excitement.{/cps}{w=0.5}{nw}"
-extend "\n{cps=24}Isn't a teenage boy supposed to feel that way considering he's living next door or literally in the same space as 2 girls, even if they have their quirks?"
+extend "\n{cps=24}Isn't a teenage boy supposed to feel that way considering he's living next door{/cps}{w=0.5}{nw}"
+
+Ash "{cps=24}or literally in the same space as 2 girls, even if they have their quirks?{/cps}"
 
 Ash "{cps=24}Or is that just for {i}healthy{/i} teenage boys?{/cps}"
 
@@ -1423,8 +1430,11 @@ menu:
         jump tstft
 
 label one:
+ play audio "flesh.mp3"
+ play audio "scream.mp3"
  show k grin
- centered "Dead"
+ centered "Dead{nw}"
+return
      
 label tstft:
     "It's...Okay."
@@ -1457,6 +1467,8 @@ Ash "{cps=24}Let me clean my ears...{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}Now go ahead!{/cps}"
 
 k "{cps=24}Jeez, you're really pushing it mister...but again it's Mio!{/cps}"
+
+$ kname = "Mio"
 
 Ash "{cps=24}Mio! Got it!{/cps}"
 
@@ -1506,3 +1518,20 @@ scene bg alm
 
 "WELL, THAT'S IT FOR THE DEMO FOLKS"
 "This time Majority of the time went to the story and fixing bugs!"
+
+
+
+"Temporary Credits: https://mochikuro.itch.io/visual-novel-character-sprite-p01 For Mio"
+"https://sutemo.itch.io/ for Both Ash and jess"
+"https://noranekogames.itch.io/ for Miho"
+"So a big thanks to Mochikuro, Sutemo, and Noranekogames for making this possible."
+"For BG assets https://min-chi.material.jp/category/fm/bg_c/ was my bestfriend, for sounds https://soundeffect-lab.info/sound/machine/machine2.html, andlast but not least for music https://ontama-m.com/ongaku_soudai.html"
+"All assets used are either copyright free, have a lenient creativecommons license that allows for commercial use, or a fairuse policy"
+#add soundeffects
+#add music
+#Fix timings and issues
+#add fluid changing expressions, might have to change engines at that point 
+#change variables into one single block, so I don't have to make seperate references each time
+#fix bugs regarding pfp windows
+#explore and use plugins for effects?
+
