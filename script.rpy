@@ -100,16 +100,19 @@ init python:
  
 define sshake = Shaker((0.5, 1.0, 0.5, 1.0), 1.0, dist=15)
 
+default Jessname = "???"
+default K = "0_Null-z-003-7-53|r-B3"
+
 define Ash = Character('Ash', color="#004B49", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/Named Male/Ash/ash smile.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define Ex = Character('???', color="#5C0120", callback=text_beep_callback_Male, window_left_padding=170, show_side_image=Transform(Image("images/extra/ex smile1.png"), crop=(250, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define G1 = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define G1 = Character("[Jessname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define Ms = Character('???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define M1 = Character('Miho', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/miho/Miho Winter Uniform/Miho smile.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
 define SM = Character('Crowd', color="#F984EF", callback=text_beep_callback_Male)
 define SW = Character('Crowd', color="#F984EF", callback=text_beep_callback_Female)
-define J1 = Character( '???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-define J1 = Character( "[Jessname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
-
+#Redundant: #define J1 = Character( '???', color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+#define J1 = Character( "[Jessname]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/jess/jess pout.png"), crop=(195, 250, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175)) 
+define k = Character("[K]", color="#00A86B", callback=text_beep_callback_Female, window_left_padding=170, show_side_image=Transform(Image("images/Kurogami Mochi/Kurogami Mochi/k normal.png"), crop=(195, 200, 650, 650), zoom=0.15, xalign=0.0, xoffset=70, yalign=1.0, yoffset=-175))
 
 default G1Affection = 0
 default G1Trust = 0
@@ -128,6 +131,12 @@ default M1Friendship = 0
 default M1Love = 0
 default M1Suspicion = 0
 default M1Disgust = 0
+
+image bg mcr: 
+    "images/bg mcr.png"
+    zoom 0.70 
+
+
 
 image ash normal:
     "images/Named Male/Ash/ash normal.png"
@@ -200,6 +209,10 @@ image jess normal:
     "images/jess/jess normal.png"
     zoom 0.5
 
+image jess sad:
+    "images/jess/jess sad.png"
+    zoom 0.5
+
 image miho smile:
     "images/miho/Miho Winter Uniform/Miho smile.png"
     zoom 0.18
@@ -223,6 +236,61 @@ image miho open:
 image miho openblush:
     "images/miho/Miho Winter Uniform/Miho openblush.png"
     zoom 0.18
+
+image k normal:
+    "images/Kurogami Mochi/Kurogami Mochi/k normal.png"
+
+image k cry:
+    "images/Kurogami Mochi/Kurogami Mochi/k cry.png"
+
+image k grin:
+    "images/Kurogami Mochi/Kurogami Mochi/k grin.png"
+
+image k idk:
+    "images/Kurogami Mochi/Kurogami Mochi/k idk.png"
+
+image k mouthleft:
+    "images/Kurogami Mochi/Kurogami Mochi/k mouthleft.png"
+
+image k mouthmiddle:
+    "images/Kurogami Mochi/Kurogami Mochi/k mouthmiddle.png"
+
+image k sad:
+    "images/Kurogami Mochi/Kurogami Mochi/k sad.png"
+
+image k flustered:
+    "images/Kurogami Mochi/Kurogami Mochi/k flustered.png"
+
+images k shut:
+    "images/Kurogami Mochi/Kurogami Mochi/k shut.png"
+
+images k smile:
+    "images/Kurogami Mochi/Kurogami Mochi/k smile.png"
+
+images k smileblush:
+    "images/Kurogami Mochi/Kurogami Mochi/k smileblush.png"
+
+images k sus:
+    "images/Kurogami Mochi/Kurogami Mochi/k sus.png"
+
+images k talk:
+    "images/Kurogami Mochi/Kurogami Mochi/k talk.png"
+
+images k talkcry:
+    "images/Kurogami Mochi/Kurogami Mochi/k talkcry.png"
+
+images k think:
+    "images/Kurogami Mochi/Kurogami Mochi/k think.png"
+
+images k veye:
+    "images/Kurogami Mochi/Kurogami Mochi/k veye.png"
+
+images k widesmile:
+    "images/Kurogami Mochi/Kurogami Mochi/k widesmile.png"
+
+images k worry:
+    "images/Kurogami Mochi/Kurogami Mochi/k worry.png"
+
 
 # The game starts here.
 
@@ -1077,8 +1145,8 @@ label choice4lonely:
 
 label choice4noticed:
     $ Jessname = "Jess"
-    J1 "{cps=7}Jess.{/cps}{w=0.5}"
-    extend "{cps=17}It's jess.{/cps}"
+    G1 "{cps=7}Jess.{/cps}{w=0.5}"
+    extend "\n{cps=17}It's jess.{/cps}"
     jump choice4common 
 
 
@@ -1088,52 +1156,209 @@ label choice4common:
    
 Ash "{cps=24}Wait. Let me carry you bags at least.{/cps}"
 
-J1 "{cps=24}Fine...{/cps}"
+G1 "{cps=24}Fine...{/cps}"
 
 M1 "{cps=24}{b}WOAH!{/b}{/cps}{w=0.5}"
 
 M1 "{cps=24}I didn't say this before but the sheer number of your bags. Isn't it too much?{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}And they look heavy too.{/cps}"
 
-J1 "{cps=24}That's...None of your your concern.{/cps}"
+G1 "{cps=24}That's...None of your your concern.{/cps}"
 
-centered "They carry the bags to [J1]'s room, at least Ash does, Miho tries and [J1] doesn't bother. "
+centered "They carry the bags to [G1]'s room, at least Ash does, Miho tries and [G1] doesn't bother. "
 with dissolve
 
+centered "She takes out a special looking scarlet key, and unlocks the room door"
+
+M1 "{cps=24}Why do you have that?{/cps}"
+
+G1 "{cps=24}Again. That's none of your concern.{/cps}"
+
+centered "The two except [G1] are left stunned as they see the room."
+
+centered "Ash and Miho both shout in unison"
+
+centered "\"WHAT THE ####\""
+
+show bg rd
+
+show ash surprised:
+    xpos 0.0 xanchor 0.0
+    yalign 1.0
+
+show miho open:
+    xpos 0.28 xanchor 0.0
+    yalign 1.0
+
+show jess sleepy:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+with dissolve
+
+"...."
+
+Ash "{cps=24}...Quick Question.{/cps}"
+
+G1 "{cps=20}Yes?{/cps}"
+
+Ash "{cps=55}How the HELL do you have this!{/cps}"
+
+M1 "{cps=37}YEAH, The other rooms were empty{/cps}"
+
+G1 "{cps=24}I guess you can say that being someone of importance has it's merits.{/cps}"
+
+Ash "{cps=55}WHAT'S THAT SUPPOSED TO MEAN. YOU GET THE BUFFET WHILE WE STARVE LIKE ABANDONED KITTENS BESIDES A OLD ARCADE ON A STREET THAT'S BESIDES THE LOCAL RIVER AT DUSK{/cps}"
+
+M1 "{cps=15}Wow.{/cps}{w=0.5}{nw}"
+extend "\n{cps=10}That was {b}really{/b} specific...{/cps}"
+
+Ash "{cps=55}THAT'S BESIDES THE POINT!{/CPS}"
+
+M1 "{cps=5}Wait...{/cps}{w=0.5}{nw}"
+extend "{cps=55}YEAH, HE'S RIGHT!{/cps}"
+
+G1 "{cps=24}Hmph. It's not my fault that you are peasants.{/cps}"
+
+M1 "{cps=24}Well, That's not-{/cps}"
+
+centered "Miho suddenly loses her breath and balance"
+
+centered "Ash and [G1] run to catch her."
+extend "\nThankfully, they manage to catch her."
+
+#Koko
+
+Ash "{cps=57}MIHO! ARE YOU O-{/cps}"
+
+show jess shocked:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+with dissolve
+
+G1 "{cps=77}MIHOOOOO!{/cps}"
+
+show jess sad:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+with dissolve
+
+centered "Her scream surprised even Ash"
+
+centered "Miho slowly gains conciousness"
+
+M1 "{cps=17}No need to scream. I just fainted, that's all.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}I'm just tired from travelling is all.{/cps}"
+
+centered "They both look a bit reassured but still concerned"
+
+G1 "{cps=24}I think you...you....{/cps}"
+
+Ash "{cps=24}You should go and rest.{/cps}"
+
+G1 "{cps=24}...yeah...{/cps}"
+
+M1 "{cps=24}I'm heading to my room then, thanks you guys.{/cps}"
+
+hide miho open at middle with moveoutleft
+
+Ash "{cps=24}I hope she's okay.{/cps}"
+
+show jess angry:
+    xpos 1.0 xanchor 1.0
+    yalign 1.0
+with dissolve
+
+G1 "{cps=24}WHY IS SCUM LIKE YOU IN MY ROOM IN THE FIRST PLACE!{/CPS}"
+
+Ash "{cps=24}Huuuuh???{/cps}"
+
+G1 "{cps=24}PERVERT! STALKER! GET OUT!{/cps}"
+
+centered "Ash Had no choice but to retreat as he was being pelted by what one can only presume to be the most massive cases of luggage out of any female on the face of the planet"
+
+Ash "{cps=24}That was...Chaotic. And tiring.{/cps}"
+Ash "{cps=24}I should go setup my room{/cps}"
+
+centered "Ash promptly so runs to his room and tries his best to move in and make things \"cozy\""
+ 
+scene bg mcr
+
+show ash normal at left with dissolve
+
+Ash "{cps=24}Well.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}It's something at least.{/cps}"
+
+show ash weirded at left with dissolve
+
+Ash "{cps=24}I should definitely raise my standards{/cps}"
+
+
+"Insert Image of Ash laying on the bed"
+
+Ash "{cps=24}This day was...kinda fun.{/cps}"
+extend "{cps=24}\nOr is it that I'm messed up in the head?"
+
+Ash "{cps=24}It's been so long since I've seen someone new, something so... refreshing.{/cps}"
+
+Ash "{cps=24}So I often think to myself, If what I'm feeling is just obsolete or is it there for a reason?{/cps}"
+
+Ash "{cps=24}Those girls seemed interesting. But, I didn't really feel any sort of excitement.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}Isn't a teenage boy supposed to feel that way considering he's living next door or literally in the same space as 2 girls, even if they have their quirks?"
+
+Ash "{cps=24}Or is that just for {i}healthy{/i} teenage boys?{/cps}"
+
+Ash "{cps=24}I thought that at least I would feel my heartrate rise{/cps}"
+
+Ash "{cps=24}But this...{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}feels like nothing at all.{/cps}"
+
+Ash "{cps=24}I thought I was over that.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}I guess I thought wrong.{/cps}"
+
+Ash "{cps=24}It's a bit confusing. It's not like I don't like women.{/cps}"
+
+Ash "{cps=24}Actually it's the contrary but I still don't get why everything isn't the same anymore.{/cps}{w=0.5}{nw}"
+extend "\n{cps=24}It's like my mind, heart and soul are stuck in the past, while this body is moving around like an empty husk.{/cps}"
+
+Ash "{cps=24}That's enough ruminating for now. As they say \"Time waits for none...b..yeah..none\""
+
+centered "Ash closed his eyes. To get a wink of sleep or try to."
+
+centered "Just as his eyelids fill with the weight of lethargy, a small object strikes his terrace door, making a small ting sound."
+centered "Ash jolts upright."
+
+Ash "{cps=55}Who's there!{/cps}"
+
+centered "Ash get up from the bed, and lays search to the source of sound when he spots a small shiny object in terrace through the sliding glass door."
+
+Ash "{cps=55}I know this is supposed to be a high society or something but why do they have glass door of all things in a students dorm?{/cps}"
+
+centered "As Ash moves towards the source of the sound, the shiny object, the sound of a knock on the door alerts him."
+
+centered "As he regains his composure, the single knock turns to a relentless torment of knocks, one after the other rythmically."
+
+centered "An overwhelming chill, and the feeling something crawling on Ash's back encompasses him"
+
+centered "shaking but undetered, Ash reaches slowly towards the doorknob, glancing at the glass door at the periodically."
+
+centered "Ash quickly grabs the door, and opens it to reveal..."
+
+centered "A petite girl?"
+
+show ash surprised:
+      xpos 0.65 xanchor 1.0
+      yalign 1
+      yoffset 500
+
+show k normal:
+      xpos 0.25 xanchor 1.0
+      yalign 1
+      yoffset 600
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+k "Meow"
 
 
 
