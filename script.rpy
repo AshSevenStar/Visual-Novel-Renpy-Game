@@ -141,6 +141,7 @@ default G1Friendship = 0
 default G1Love = 0
 default G1Suspicion = 0
 default G1Disgust = 0
+default G1Interest = 0
 
 default M1Affection = 0
 default M1Trust = 0
@@ -1485,10 +1486,10 @@ extend "\nTo which the cultured man declined, and left for the Gula- I mean the 
 
 scene bg lrnl
 
-Ash "Not even my first day and I'm getting caught up in trouble and confusion."
-Ash "It's frustrating to not be able to comprehend things."
-Ash "And am I really going crazy or did I really hear that weird buzz instead when she said her name the first few times?"
-Ash "It might just be my sleep deprivation kicking in."
+Ash "{cps=24}Not even my first day and I'm getting caught up in trouble and confusion.{/cps}"
+Ash "{cps=24}It's frustrating to not be able to comprehend things.{/cps}"
+Ash "{cps=24}And am I really going crazy or did I really hear that weird buzz instead when she said her name the first few times?{/cps}"
+Ash "{cps=24}It might just be my sleep deprivation kicking in.{/cps}"
 
 scene bg lrnd
 
@@ -1500,27 +1501,398 @@ pause 1
 
 scene bg lrm
 
-show ash normal:
-      xpos 0.25 xanchor 1.0
-      yalign 1
-      yoffset 600
+
+show ash normal at left
   
 #Add normal clothing
 
-show jess smile2:
-      xpos 1.0 xanchor 1.0
-      yalign 1
-      yoffset 600
+#show jess smile2:
+      #xpos 1.0 xanchor 1.0
+      #yalign 1
+      #yoffset 600
 
-show miho smile:
+#show miho smile:
+      #xpos 0.80 xanchor 1.0
+      #yalign 1
+      #yoffset 600
+
+
+
+#Add Ash sleeping on the sofa
+
+Ash "{cps=30}Uhmmm.{nw}{w=1}{/cps}"
+Ash "{cps=30}Is it morning already?{/cps}"
+
+centered "{cps=30}Ash glances at his watch, 6 am, a time he usually doesn't wake up at.{/cps}"
+
+Ash "{cps=27}That's surprisingly early.{/cps}"
+
+Ash "{cps=27}Is it coincidence or is my sleep cycle actually improving?{/cps}"
+ 
+Ash "{cps=27}Perhaps that's it. A lot things can certainly change when you're not being called out hateful words and your existence being dismissed every second.{/cps}"
+
+Ash "{cps=27}Maybe that isn't it. Maybe, just maybe, all of us have the ability to change for the better.{/cps}{nw}{w=1}"
+extend "\n{cps=27}Even If we despise our circumstances or ourselves, or both.{/cps}"
+
+Ash "{cps=27}Sometimes, just seeing my own weakness, my lacks of effort, makes me think otherwise.{/cps}{nw}{w=1}"
+extend "\n{cps=27}It's because even when I try it's like the world is against me.{/cps}"
+
+Ash "{cps=27}It feels like I'm just a hollow husk, without any childlike innocence and no personality, against all that I've known and all I've tried to avoid.{/cps}"
+
+Ash "{cps=33}Or I'm just getting overly philosophical and wasting my time here.{/cps}"
+
+show jess angry at right with moveinright 
+
+G1 "{cps=33}Nope!{/cps}{nw}" 
+extend "\n{cps=33}you {i}{b}are{/b}{/i} just an idiotic and crazy fool, but I'm glad you're at least aware of it.{/cps}"
+
+Ash "{cps=33}Wait. You're awake?{/cps}{nw}{w=1}"
+extend "\n{cps=33}I've been talking out loud?{/cps}{nw}{w=1}"
+extend "\n{cps=33}And {b}HEYY!{/b}, I'm {i}not{/i} an Idiot or a crazy fool!{/cps}"
+
+
+G1 "{cps=33}You sure look like an idiot to me!{/cps}"
+
+Ash "{cps=33}I DO NOT!{/cps}"
+
+G1 "{cps=27}Yes you do.{/cps}"
+
+Ash "{cps=27}It's not worth it trying to explain it to someone like you anyways.{/cps}"
+
+G1 "{cps=27}Excuse me? What does someone as low class as you know about basic logic or {i}ME?{/i}{/cps}"
+
+menu:
+    "More than necessary to make judgement I suppose.":
+       jump choice5sharp
+    "You really consider yourself high class. With that attitude?":
+       jump choice5strike
+    "Nothing much honestly.":
+       jump choice5surprise
+
+label choice5sharp:
+     
+    $G1Interest =+1
+    $G1Respect =+1
+
+    show jess shocked at right
+    
+    G1 "{cps=27}You are cocky you know that?{/cps}"
+    
+    G1 "{cps=27}Too cocky infact.{/cps}"
+
+    jump choice5common
+
+label choice5strike:
+     
+    $G1Disgust =+1
+    $G1Respect =+1
+
+    show jess shocked at right
+
+    G1 "{cps=27}{b}WHA-{/b}{/cps}{nw}{w=1}"
+    extend "\n{cps=27}{b}OF COURSE I DO!{/b}{/cps}"
+   
+    G1 "{cps=27}{b}The amount of disrespect you've shown is almost palpable, almost makes me surprised.{/b}{/cps}{nw}{w=1}"
+    extend "\n{cps=27}{b}Almost{/b} is the key word here.{/cps}"
+
+    jump choice5common
+
+label choice5surprise:
+
+    $G1Interest=+1
+    $G1Affection=+1
+  
+    show jess shocked at right
+
+    G1 "{cps=24}Do you have no pride? It's almost pitiful.{/cps}"
+    
+    G1 "{cps=24}Even though that's how someone like you should be.{/cps}"
+
+    jump choice5common
+
+label choice5common:
+ 
+    show jess angry at right
+    
+    G1 "{cps=24}I shouldn't be conversing with someone so gloomy and pitiful anyways.{/cps}"
+
+    G1 "{cps=24}I'm heading out.{/cps}"
+
+    centered "She Added:"
+
+    G1 "{cps=24}Don't follow me creep.{/cps}"
+
+show jess angry at center with moveoutleft
+
+hide jess angry with moveouttop
+
+Ash "{cps=24}What's her problem?{/cps}"
+
+Ash "{cps=24}And why does she think I'm a creep?{/cps}{nw}{w=1}"
+extend "\n{cps=24}Do all women think of me that way or is that unique to her only?{/cps}"
+
+M1 "{cps=24}It's only her. Don't worry I don't think you're a creep more like a weirdo.{/cps}"
+
+show miho smile at right with moveinright:
       xpos 0.80 xanchor 1.0
       yalign 1
       yoffset 600
 
-scene bg alm
 
-"WELL, THAT'S IT FOR THE DEMO FOLKS"
-"This time Majority of the time went to the story and fixing bugs!"
+Ash "{cps=24}Wha-{/cps}{nw}{w=1}"
+extend "\n{cps=27}You think I'm a weirdo? And when did you get here?{/cps}"
+
+M1 "{cps=24}I guess just now? Since we're here together, living next door.{/cps}{nw}{w=1}"
+extend "\n{cps=24}And Kinda.{/cps}"
+
+Ash "{cps=24}I'm weird? What's so weird about me?{/cps}{nw}{w=1}"
+extend "{cps=24}I mean really what is it?{/cps}"
+
+M1 "{cps=24}I can't really say. It's just that the way you talk, or maybe your expressions?{/cps}"
+
+M1 "{cps=24}It's honestly confusing. You look confused but understanding at the same time.{/cps}"
+
+Ash "{cps=24}You mean my weirdness is incomprehensible?{/cps}"
+
+M1 "{cps=24}Yeah! Take it as compliment.{/cps}"
+
+Ash "{cps=24}I... don't want to.{/cps}"
+
+show miho frownblush at right
+
+M1 "{cps=24}It isn't the worst thing you can hear.{/cps}"
+
+show miho smile at right
+
+Ash "{cps=24}Is that my standards now? Not the worst thing.{/cps}"
+
+M1 "{cps=24}Whispers: {i}I actually think you're kinda charming...{/i}{/cps}"
+
+Ash "{cps=24}What?{/cps}"
+
+M1 "{cps=39}WHAT?{/cps}"
+
+centered "{cps=1}...{/cps}"
+
+Ash "{cps=24}Anyways. Forgetting my {i}}Weirdness{/i}.{/cps}"
+
+show miho frownblush at right
+
+M1 "{cps=24}I didn't mean to offend you...{/cps}"
+
+Ash "{cps=24}Non taken.{/cps}"
+
+M1 "{cps=24}Doesn't seem like it.{/cps}"
+
+Ash "{cps=24}...{/cps}{nw}{w=1}"
+extend "{cps=24}Forgetting my weirdness, this place is surprisingly cozy, this couch too.{/cps}"
+
+show miho smile at right
+
+M1 "{cps=24}Speaking of which, I've been meaning to ask, why have you been sleeping here?{/cps}"
+extend "{cps=24}Although it was cute, you were purring like a cat in your sleep. The cat was snuggling you too.{/cps}"
+
+Ash "{cps=24}I was?{/cps}"
+extend "{cps=24}That's...embarrasing.{/cps}"
+
+M1 "{cps=24}Don't avoid the question MCGee.{/cps}"
+
+Ash "{cps=24}Oh, our new roommate decided to join us late at night, showed up at my door and took my bed.{/cps}"
+
+M1 "{cps=24}That's strange... you're door has been wide open and I've seen no one except you and jess?{/cps}"
+
+Ash "{cps=24}....maybe they left?{/cps}"
+
+M1 "{cps=24}So early? What a weird guy.{/cps}"
+
+Ash "{cps=24}Gal actually.{/cps}"
+
+M1 "{cps=24}...They're a girl?..{/cps}"
+
+Ash "{cps=24}Yeah why?{/cps}"
+
+M1 "{cps=24}Nothing. Nothing. she didn't say anything weird to you, did she?{/cps}"
+
+Ash "{cps=24}I don't want to be rude, but she was entirely...unique.{/cps}"
+
+show miho smileblush at right
+
+M1 "{cps=24}Uhmm...You do know a random girl entering a guys room in the middle of the night isn't normal?{/cps}"
+
+Ash "{cps=24}Oh so that's what you were so hung up about. I'm well aware of that.{/cps}{nw}{w=1}"
+extend "{cps=24}But she didn't mean anything like that, she was just...overwhelming.{/cps}"
+
+M1 "{cps=24}I'm glad...{/cps}"
+
+Ash "{cps=24}You are?{/cps}"
+
+M1 "{cps=39}WHY WOULDN'T I BE?!{/cps}"
+
+Ash "{cps=24}You know, maybe it's just my not so great perspective on girls my age but you're pretty weird as well.{/cps}"
+
+M1 "{cps=24}In what way?{/cps}"
+
+Ash "{cps=24}Sometimes you do and say things that can be misinterpreted.{/cps}{nw}{w=1}"
+extend "\n{cps=24}But that's probably just me. I'm not great at reading people nowadays...{/cps}"
+
+M1 "{cps=24}Hahahaha. You probably are. ahhaha.{/cps}"
+
+Ash "{cps=24}Now it just feels like you're trying to confirm my suspicions.{/cps}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
