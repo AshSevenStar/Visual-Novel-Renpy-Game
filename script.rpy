@@ -1909,80 +1909,146 @@ Ash "{cps=24}Wow, that's surprising.{/cps}{nw}{w=1}"
 extend "\n{cps=24}I see things like Mt, Cote, liar liar, railgun, 86, AD and bunny girl senpai?{/cps}{nw}{w=1}"
 extend "\n{cps=24}All Lightnovels...You'r...Surprisingly Cultured!{/cps}"
 
+M1 "{cps=24}I'm surprised too! You know all of them!!!{/cps}"
 
+Ash "{cps=24}Of course I do!{/cps}"
 
+M1 "{cps=24}Yeah! Only a normie wouldn't!{/cps}"
 
+Ash "{cps=24}Woah, you're a really hardcore weeb.{/cps}"
 
+M1 "{cps=24}...{/cps}"
 
+Ash "{cps=24}Don't worry, We'll be hardcore weebs together, I'm a hardcore otaku too.{/cps}"
 
+M1 "{cps=24}Don't scare me like that, I thought I lost someone I could talk to.{/cps}"
 
+Ash "{cps=24}Anyways. I know you know AD, that's the most suprising part. How do you even know that?{/cps}"
 
+Ash "{cps=24}It's not exactly the kinda thing a girl would like.{/cps}"
 
+M1 "{cps=24}I'm not just any girl am I?{/cps}"
 
+Ash "{cps=24}If that's so, I want to know, do you know COAFK?{/cps}"
 
+M1 "{cps=24}You mean with Stella, the mc and his sister?{/cps}"
 
+Ash "{cps=24}Colour me impressed. Will you marry me?!!{/cps}"
 
+M1 "{cps=24}{b}WHAAAAAAT?!!!!{/b}{/cps}"
 
+Ash "{cps=24}Where would I find a woman this knowing of the arts?!!{/cps}"
 
+M1 "{cps=24}WALMART! NO! I MEAN SERIOUSLY?!{/cps}"
 
+Ash "{cps=24}Hahahah. Take it as a compliment but you knowing all this really made my day!{/cps}"
 
+M1 "{cps=24}Don't say things like that as a joke! but thanks.{/cps}"
 
+Ash "{cps=24}It's impossible for me to stop when expressing my unbridled joy.{/cps}"
 
+M1 "{cps=24}It's impossible for me to use my brain when you say stuff like that.{/cps}"
 
+Ash "{cps=24}Well, who's your favourite in COAFK?{/cps}"
 
+M1 "{cps=24}The MC, actually, the whole squad, and the girl with glasses.{/cps}"
 
+Ash "{cps=24}What about...the thigh scene?{/cps}"
 
+M1 "{cps=24}It's my favourite....Is that bad?{/cps}"
 
+Ash "{cps=24}I think {i}that's{/i} considered flirting.{/cps}"
 
+Ash "{cps=24}The happiness I feel from someone who knows this. Is beyond words.{/cps}"
 
+M1 "{cps=24}Well, I'm glad you think so!{/cps}{nw}{w=1}"
+extend "\n{cps=24}And I'll keep in mind that you consider that flirting...{/cps}"
 
+M1 "{cps=24}Anyways, I'm happy too.{/cps}"
 
+M1 "{cps=24}Wanna watch some anime together?{/cps}"
 
+Ash "{cps=24}Sure.{/cps}"
 
+M1 "{cps=24}Let me get my blanket.{/cps}"
 
+Ash "{cps=24}What are you going to do with it?{/cps}"
 
+M1 "{cps=24}We'll share it.{/cps}"
 
+Ash "{cps=24}We will?!{/cps}"
 
+M1 "{cps=24}Yeah!{/cps}"
 
+Ash "{cps=24}Well, I'm in. So how are we gonna do this?{/cps}"
 
+M1  "{cps=24}I think this sofa can extend a bit.{/cps}"
 
+Ash "{cps=24}is this position good? We're in the normal sofa sitting position.{/cps}"
 
+M1 "{cps=24}No, You've got to and lay down like me.{/cps}"
 
+Ash "{cps=24}But won't our legs get tangled that way?{/cps}"
 
+M1 "{cps=24}They won't. Unless you want them to, You've just have to keep them to your side.{/cps}"
 
+Ash "{cps=24}This is embarrasing...{/cps}"
 
+M1 "{cps=24}It is, but I don't find it as much after knowing we have the same tastes.{/cps}"
 
+M1 "{cps=24}I mean at least I can guarantee that even if you're a bit shy you're definitely not a creep.{/cps}"
 
+Ash "{cps=24}Thanks, I guess.{/cps}"
 
+Ash "{cps=24}Well, we are besides eachother now...{/cps}"
 
+Ash "{cps=24}This feels a bit...{/cps}"
 
+M1 "{cps=24}Intimate? I guess we're friends now.{/cps}"
 
+Ash "{cps=24}I'm glad that our friendship is beyond boundaries.{/cps}"
 
+M1 "{cps=24}You just said something really beautiful y'know.{/cps}"
 
+Ash "{cps=24}Well, Should we watch SNS first?{/cps}"
 
+M1 "{cps=24}Let's watch GS first!{/cps}"
 
+Ash "{cps=24}Okay! GS first, then SNS, good?{/cps}"
 
+M1 "{cps=24}Awesome!{/cps}"
 
+centered "{cps=24}They started watching anime together!{/cps}"
 
+centered "{cps=24}Slowly but surely they both fell asleep.{/cps}"
 
+centered "{cps=24}After a few hours, Miho was the first to wake up.{/cps}"
 
+scene bg lrd
 
+M1 "{cps=24}What happened....Did I fall asleep?{/cps}"
 
+M1 "{cps=24}Oh yeah, We were watching anime.{/cps}"
 
+M1 "{cps=24}He's sleeping besides me, too close infact.{/cps}"
 
+M1 "{cps=24}His head on my shoulder, looking towards me, with drool coming out his mouth. but judging his face...{/cps}"
 
+M1 "{cps=24}He just looks so...innocent.{/cps}"
 
+M1 "{cps=24}I thought he was funny but we have much in common too.{/cps}"
 
+M1 "{cps=24}I think it's best if I just fall asleep again.{/cps}"
 
+centered "{cps=24}Inside Ash's mind, and his dreams.{/cps}"
 
+Ash "{cps=24}Why does?{/cps}"
 
+Ash "{cps=24}what does?{/cps}"
 
+Ash "{cps=24}For does?{/cps}"
 
-
-
-
-
-
+Ash 
 
 
 
