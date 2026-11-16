@@ -1689,11 +1689,11 @@ extend "{cps=24}Forgetting my weirdness, this place is surprisingly cozy, this c
 
 show miho smile at right
 
-M1 "{cps=24}Speaking of which, I've been meaning to ask, why have you been sleeping here?{/cps}"
-extend "{cps=24}Although it was cute, you were purring like a cat in your sleep. The cat was snuggling you too.{/cps}"
+M1 "{cps=24}Speaking of which, I've been meaning to ask, why have you been sleeping here?{/cps}{nw}{w=1}"
+extend "\n{cps=24}Although it was cute, you were purring like a cat in your sleep. The cat was snuggling you too.{/cps}"
 
-Ash "{cps=24}I was?{/cps}"
-extend "{cps=24}That's...embarrasing.{/cps}"
+Ash "{cps=24}I was?{/cps}{nw}{w=1}"
+extend "\n{cps=24}That's...embarrasing.{/cps}"
 
 M1 "{cps=24}Don't avoid the question MCGee.{/cps}"
 
@@ -1739,38 +1739,175 @@ M1 "{cps=24}Hahahaha. You probably are. ahhaha.{/cps}"
 
 Ash "{cps=24}Now it just feels like you're trying to confirm my suspicions.{/cps}"
 
+M1 "{cps=24}Please don't...{/cps}"
 
+Ash "{cps=24}Okay I won't.{/cps}"
 
+M1 "{cps=24}Okay....Let's think about something else, what do you like to do?{/cps}"
 
+menu:
+    "Flirt with unsuspecting victims of mine.":
+       jump choice6scare
+    "Nothing.":
+       jump choice6bore
+    "Reading Novels, playing games, baking, and thinking unrealistic scenarios.":
+       jump choice6nerd
+    "Training, trying to do things no one has probably tried, and trying to live the way that makes me happiest.":
+       jump choice6life
+    "I don't really know. I like everything or most things.":
+       jump choice6all
+ 
+label choice6scare:
+    $M1Fear=+1
+    M1 "{cps=24}That's very funny...{/cps}"
+    jump choice6common
 
+label choice6bore:
+    $M1Suspiscion=+1
+    $M1Respect=+1
+    M1 "{cps=24}oh...that's disappointing.{/cps}"
+    jump choice6common
 
+label choice6nerd:
+    $M1Affection=+1
+    $M1Love=+0.5
+    $M1Respect=+0.25
+    M1 "{cps=24}Woah, I like a lot of those things.{/cps}"
+    jump choice6common
 
+label choice6life:
+    $M1Affection=+0.25
+    $M1Respect=+0.5
+    $M1Love=+0.25
+    M1 "{cps=24}Isn't that the best way to live? Doing what you find fun!?{/cps}"
+    jump choice6common
 
+label choice6all:
+    $M1Trust=+1
+    $M1Affection=-1
+    M1 "{cps=24}That's a problem that I've had before. Once though!{/cps}"
+    jump choice6common
 
+label choice6common:
 
+ M1 "{cps=24}Hmmn. I'm a big fan of novels, cooking and music!{/cps}"
 
+Ash "{cps=24}Are you a fan of visual novels by chance?{/cps}"
 
+M1 "{cps=24}Yeah, why?{/cps}"
 
+Ash "{cps=24}Nothing, just giving someone a hint.{/cps}"
 
+M1 "{cps=24}?{/cps}"
 
+Ash "{cps=24}Well, I think I'm going to headout. Go on a walk.{/cps}"
 
+M1 "{cps=24}Why so early?{/cps}"
 
+Ash "{cps=24}It's my first time in japan, so I want to explore.{/cps}"
 
+M1 "{cps=24}Wait, Can you stay?{/cps}"
 
+Ash "{cps=24}...why?{/cps}"
 
+M1 "{cps=24}Let's hangout a bit.{/cps}"
 
+Ash "{cps=24}Uhmmm, Sure?{/cps}"
 
+M1 "{cps=24}Come, Let's...sit together.{/cps}"
 
+centered "{cps=77}IS THIS A ROMCOM, WHY IS THIS HAPPENING TO ME?{/CPS}"
 
+centered "{cps=77}IS THIS GOODLUCK? IS THIS NOT MY BAD DAY?{/CPS}"
 
+Ash "{cps=24}You mean...besides you on the sofa?{/cps}"
 
+M1 "{cps=24}Yeah. What else could I mean?{/cps}{w=1}{nw}"
+extend "\n{cps=24}Oh, do you maybe dislike me?{/cps}"
 
+Ash "{cps=24}No! That's not it!{/cps}"
 
+M1 "{cps=24}Are you maybe bad with girls?{/cps}"
 
+Ash "{cps=24}...Yeah. It's just that I haven't interacted with girls my age since 6th grade.{/cps}"
 
+M1 "{cps=24}Really?{/cps}"
 
+Ash "{cps=24}Yeah. It's just that I've had bad experiences getting close to girls somewhat recently.{/cps}"
 
+M1 "{cps=24}What happened?{/cps}"
 
+Ash "{cps=24}I was called a creep and pervert unreasonably. Garnered the name R### King amoung the boys.{/cps}"
+
+M1 "{cps=24}That's awful!{/cps}"
+
+M1 "{cps=24}It's not true obviously! Right!? They framed you right?! I mean what about the girls? Did they support you?!{/cps}"
+
+Ash "{cps=24}Why would they speak of an incident they caused? They were the ones who accused me of it.{/cps}"
+
+M1 "{cps=24}That's unexpected, I thought the boys would be the ones since they mess around with eachother.{/cps}"
+
+Ash "{cps=24}People can be as equally of deceiving no matter the circumstances.{/cps}"
+
+Ash "{cps=24}Anyways, I don't want to talk about it.{/cps}"
+
+M1 "{cps=24}I guess we can't sit together then...{/cps}"
+
+Ash "{cps=24}No. I'm fine with that, it's just a bit awkward since being so close with the opposite sex isn't the norm where I'm from{/cps}"
+
+M1 "{cps=24}You don't mind?{/cps}"
+
+Ash "{cps=24}Don't take this as harrasment but no one would mind sitting next to a beautiful girl unless they're married.{/cps}"
+
+M1 "{cps=37}So you think I'm beautiful?!{/cps}"
+
+Ash "{cps=24}Compared to me most people are.{/cps}"
+
+M1 "{cps=24}.......{/cps}"
+
+Ash "{cps=24}But even then, you are indeed really beautiful compared to anyone I've ever seen.{/cps}"
+
+M1 "{cps=24}...I don't know where you're from, but that'd be considered flirting here.{/cps}"
+
+Ash "{cps=24}Facts are attempts at flirting now?{/cps}"
+
+M1 "{cps=24}If you really think that way, then thanks, but don't use it on unsuspecting girls or you might get pepper sprayed.{/cps}"
+
+Ash "{cps=24}Don't worry, I don't desire jailtime.{/cps}"
+
+M1 "{cps=24}Well, are you going to sit or not?{/cps}"
+
+Ash "{cps=24}Give me a second.{/cps}"
+
+centered "{cps=24}Ash moves towards the sofa and sits besides the girl.{/cps}"
+
+M1 "{cps=24}Not that close!!!{/cps}"
+
+Ash "{cps=24}SORRY!{/cps}"
+
+M1 "{cps=24}I'm just kidding!{/cps}"
+
+M1 "{cps=24}Get closer! That's a bit far.{/cps}"
+
+Ash "{cps=24}Really? Don't scare me like that.{/cps}"
+
+M1 "{cps=24}Yeah, You don't really have a good sense of space do you?{/cps}"
+
+Ash "{cps=24}I used to.{/cps}"
+
+Ash "{cps=24}Is this close enough?{/cps}"
+
+M1 "{cps=24}Yeah. It is.{/cps}"
+
+Ash "{cps=24}There. Now what?{/cps}"
+
+centered "{cps=24}She pulls out a tablet.{/cps}"
+
+M1 "{cps=24}See these are all the novels I read.{/cps}"
+
+Ash "{cps=24}Wow, that's surprising.{/cps}{nw}{w=1}"
+extend "\n{cps=24}I see things like Mt, Cote, liar liar, railgun, 86, AD and bunny girl senpai?{/cps}{nw}{w=1}"
+extend "\n{cps=24}All Lightnovels...You'r...Surprisingly Cultured!{/cps}"
 
 
 
