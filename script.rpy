@@ -638,19 +638,27 @@ label result1common:
 
  show ash normal at left with moveinleft
 
- Ash "{cps=24}I guess this is the place where I'll be living for the time being.{/cps}"
 
+
+ Ash "{cps=24}I guess this is the place where I'll be living for the time being.{/cps}"
+ #add brawl sound effect
+ play audio "audio/brawl.mp3" volume 1 
+ play audio "audio/wilhem.mp3" volume 2
+
+ 
  Ash "{cps=24}I heard some weird voice.{/cps}{nw}{w=1}"
  extend "\n{cps=24}What even was that exactly?{/cps}{w=1}{nw}"
  extend "\n{cps=24}Sounded like some sort of brawl, then a squeak.{/cps}"
 
 #add door sound effect
- play sound "audio/dooropen.mp3" volume 0.5
+
 
  pause 1.0
 
  Ash "{cps=25}I just hope the place is decent enough to live in.{/cps}{w=0.75}{nw}"
  extend "\n{cps=25}Well, I've dealt with worse before, but still would be nice.{/cps}"
+
+ play sound "audio/Door.mp3" volume 1
 
  scene bg hem with dissolve
 
@@ -662,6 +670,8 @@ label result1common:
  pause 1
 
  hide ash weireded at left with moveoutright 
+
+ play sound "audio/Door.mp3" volume 1
  
  pause 1
 
@@ -674,9 +684,19 @@ label result1common:
  Ash "{cps=25}But even considering the scholarship grant, isn't this place a bit too expensive for one person?{/cps}"
 
 #add BoxesCrashing soundeffect
-centered "INSERT NON COPYRIGHT BOXES CRASHING SFX"
+play sound "audio/BoxesCrash.mp3" volume 1
+
+
+centered "{cps=25}The sound of boxes crashing frightens Ash. He moves forward to investigate..{/cps}"
+
+Ash "{cps=25}What was that...{/cps}"
+
 #add then girl appearing and crashing into Mc effect
-centered "INSERT NON COPYRIGHT GIRL CRASHING INTO MC EFFECT"
+play audio "audio/BodyFall.mp3" volume 1
+
+play sound "audio/AnimeGirl.mp3" volume 0.25
+
+centered "Something crashes into Ash."
 
 Ash "{cps=20}I think I spoke too soon...{/cps}"
 
@@ -798,8 +818,9 @@ show miho openblush at right with dissolve
 M1 "{cps=37}S-SAME HERE!!!{/cps}{nw}{w=0.5}"
 extend "\n{cps=25}I'll be...counting on you.{/cps}{w=0.5}"
 
-centered "Insert the sound of a cat"
+#centered "Insert the sound of a cat"
 
+play audio "audio/Meow.mp3" volume 1
 show ash surprised at left with dissolve
 show miho frown at right with dissolve
 
@@ -809,6 +830,7 @@ M1 "{cps=30}Yeah, It's what I was dealing with earlier.{/cps}"
 extend "\n{cps=30}It came from under the boxes{/cps}"
 
 #Meow sound plays again
+play audio "audio/Purr.mp3" volume 1
 
 "{cps=30}A little orange ball, or what seems to be the head of a cat pops out of the cardboard{/cps}"
 
@@ -849,8 +871,10 @@ label choice2hand:
 
     Ash "{cps=30}Hey there, Little guy..or girl. Sorry for scaring you.{/cps}"
 
-    "{cps=30}The cat sniffs my fingers, and then rubs it's head against my open hand.{/cps}"
+    play audio "audio/CatSniff.mp3"
 
+    "{cps=30}The cat sniffs my fingers, and then rubs it's head against my open hand.{/cps}"
+    
     M1 "{cps=30}It likes you, it seems...{/cps}{w=0.75}{nw}"
     extend "\n{cps=30}I'm a bit jealous...{/cps}"
 
@@ -869,6 +893,20 @@ label choice2food:
 
     show miho open at right with dissolve
     
+    play audio "audio/CatFood.mp3"
+    
+    pause 1
+     
+    centered "{cps=25}Ash opens the can of Catfood for the little cat.{/cps}"
+ 
+    pause 1
+    
+    play audio "audio/CatEat.mp3"
+
+    centered "{cps=25}The cat starts chowing down as if it's been hungry for years.{/cps}"
+ 
+    pause 1
+
     M1 "{cps=30}Good thinking Ash!{/cps}{w=0.5}{nw}"
     extend "\n{cps=30}I've known {b}you{/b} for like five minutes, and you're already showing off.{/cps}"
 
@@ -885,9 +923,13 @@ label choice2nokeep:
 
     show miho frownblush at right with dissolve
 
-    M1 "{cps=30}You're so cold...{/cps}{w=0.75}{nw}"
-    extend "\n{cps=30}Look at those eyes!!!!{/cps}"
+    play audio "audio/SM.mp3" volume 1 
 
+    M1 "{cps=30}You're so cold...{/cps}{w=0.75}{nw}"
+    extend "\n{cps=30}Look at those eyes!!!!{/cps}{nw}{w=1.15}"
+    
+    
+    play audio "audio/Stop.mp3" volume 3
     Ash "{cps=30}I'm not saying we should get rid of it! More like ask for permission first.{/cps}"
 
     M1 "{cps=30}...fine.{/cps}"
@@ -897,7 +939,8 @@ label choice2nokeep:
 label choice2common:
   #Temporary/Unrefined story after this part
   #Doorbell sfx plays
-   centered "#Doorbell sfx plays"
+  #centered "#Doorbell sfx plays"
+   play audio "audio/JPdoorbell.mp3" volume 1 
 
    centered "{cps=30}{b}Ding-Dong.{/b}{/cps}"
 
@@ -915,8 +958,10 @@ label choice2common:
    pause 0.75
 
    #Door opening SFX
-   centered "Insert Door opening SFX"
-
+   #centered "Insert Door opening SFX"
+    
+   play audio "audio/door.mp3" volume 1 
+    
    show jess pout:
     xpos 1.0 xanchor 1.0
     yalign 1.0
@@ -1020,6 +1065,8 @@ label choice3tease:
 
     show miho smile at center with dissolve
 
+    play audio "audio/Girlgiggle.mp3" volume 1 
+
     M1 "{cps=30}Pffft-{/cps}"
 
     show jess angry:
@@ -1118,6 +1165,8 @@ pause 0.75
 
 #Note: Jess is less Tsun around cats
 #Add Cat Meow 
+play audio "audio/Meow.mp3" volume 1 
+
 
 "{cps=24}The cat pads in from the hallway and sits in the middle  of the floor.{/cps}{w=0.5}{nw}"
 extend "\n{cps=24}It looks at Jess.{/cps}{w=0.5}{nw}"
@@ -1157,7 +1206,9 @@ M1 "{cps=27}She's definitely keeping it.{/cps}"
 
 G1 "{cps=24}I will erase your existence from this plain of perception.{/cps}"
 
-#Note: In the future change her to have a scared expression
+#Note: In the future change her to have a scared expression #change
+
+play audio "audio/JPdoorbell.mp3" volume 1 
 
 M1 "{cps=55}UWAAAH. SO SCARY.{/cps}"
 
@@ -1259,9 +1310,11 @@ extend "{cps=55}YEAH, HE'S RIGHT!{/cps}"
 
 G1 "{cps=24}Hmph. It's not my fault that you are peasants.{/cps}"
 
-M1 "{cps=24}Well, That's not-{/cps}"
+M1 "{cps=24}Well, That's not-{/cps}" 
 
-centered "Miho suddenly loses her breath and balance"
+centered "Miho suddenly loses her breath and balance."
+
+play audio "audio/fastwhoosh.mp3" volume 1
 
 centered "Ash and [G1] run to catch her."
 extend "\nThankfully, they manage to catch her."
@@ -1276,6 +1329,8 @@ show jess shocked:
 with dissolve
 
 G1 "{cps=77}MIHOOOOO!{/cps}"
+
+play audio "audio/SCRM.mp3" volume 1
 
 show jess sad:
     xpos 1.0 xanchor 1.0
@@ -1331,7 +1386,6 @@ extend "\n{cps=24}It's something at least.{/cps}"
 show ash weirded at left with dissolve
 
 Ash "{cps=24}I should definitely raise my standards.{/cps}"
-
 
 "Insert Image of Ash laying on the bed"
 
@@ -1674,7 +1728,7 @@ M1 "{cps=39}WHAT?{/cps}"
 
 centered "{cps=1}...{/cps}"
 
-Ash "{cps=24}Anyways. Forgetting my {i}}Weirdness{/i}.{/cps}"
+Ash "{cps=24}Anyways. Forgetting my {i}Weirdness{/i}.{/cps}"
 
 show miho frownblush at right
 
@@ -1907,7 +1961,7 @@ M1 "{cps=24}See these are all the novels I read.{/cps}"
 
 Ash "{cps=24}Wow, that's surprising.{/cps}{nw}{w=1}"
 extend "\n{cps=24}I see things like Mt, Cote, liar liar, railgun, 86, AD and bunny girl senpai?{/cps}{nw}{w=1}"
-extend "\n{cps=24}All Lightnovels...You'r...Surprisingly Cultured!{/cps}"
+extend "\n{cps=24}All Lightnovels...You're...Surprisingly Cultured!{/cps}"
 
 M1 "{cps=24}I'm surprised too! You know all of them!!!{/cps}"
 
@@ -2048,35 +2102,41 @@ Ash "{cps=24}what does?{/cps}"
 
 Ash "{cps=24}For does?{/cps}"
 
-Ash 
+Ash "{cps=24}Who does?{/cps}"
 
+Ash "{cps=24}How?{/cps}"
 
+Ash "{cps=24}water cold{/cps}"
 
+Ash "{cps=24}Headhot?{/cps}"
 
+Ash "{cps=24}Why?{/cps}"
 
+Ash "{cps=24}Why do I feel so soft and warm?{/cps}"
 
+Ash "{cps=24}It feels so relaxing anyways...{/cps}"
 
+Ash "{cps=24}What's the point of living such a harsh life when you can just have fun?{/cps}"
 
+Ash "{cps=24}You can just have fun and enjoy things to your fullest, can't you?{/cps}"
 
+Ash "{cps=24}So what's the point of living so frugally in the modern world?{/cps}"
 
+Ash "{cps=24}What's the point of not trying to live how you want even if you can't pay the price?{/cps}"
 
+Ash "{cps=24}I can only decide if I see things through in life.{/cps}"
 
+Ash "{cps=24}Speaking of which, where was I?{/cps}"
 
+Ash "{cps=24}I was watching anime with Miho, wasn't I?{/cps}"
 
+Ash "{cps=24}I Guess I fell asleep.{/cps}"
 
+Ash "{cps=24}hmm...What's that sound?{/cps}"
 
+play audio "audio/girlhum.mp3"
 
-
-
-
-
-
-
-
-
-
-
-
+Ash "{cps=24}Hey{/cps}"
 
 
 
@@ -2116,3 +2176,4 @@ Ash
 #explore and use plugins for effects?
 #Add blood and gore, lot's of it!!!!!!!!!!!!!!!!!!! for MIO!!!!!!!!!!!!!
 #Make things more spicy and surprising.
+
