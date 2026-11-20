@@ -38,9 +38,15 @@ I wanted to make a game that reflected the confusion and chaos of day to day lif
 I also wanted it be as introspective as Everlasting Summer by soviet games, while incorporating the mysteries of steinsgate.
 Another game which inspires me Is Null. That game, surprisingly had a huge impact on my life even though I didn't get the story much.
 
+<img width="900" height="473" alt="bqqqqq" src="https://github.com/user-attachments/assets/2a7cb636-0875-44d8-a521-167133f07b8a" />
 
+//*How I made it:*
+Since I'm a newbie at code, and a teen who isn't able to support himself financially, it was difficult to learn and make it in time for the deadline, but I'm proud to day that I used no ai, and wrote everything by hand, and borrowed some assets off the next, copyright free of course.
+I don't have much knowledge so my best friends in this journey were the renpy documentation, and posts on old renpy question forums that helped me figure out the more difficult code and how to make different things.
+My speciality is part of it, but, it's in your hand to judge my works worth, stranger.
 
-
+Currently, I'm thinking of changing engines from renpy to an alternative as writing code in renpy is inefficent and tedious.
+Small changes take up most of my times, and the story system I'm aiming for with different paths might not work on renpy.
 
 
 
