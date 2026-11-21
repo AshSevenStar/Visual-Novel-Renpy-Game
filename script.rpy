@@ -234,7 +234,11 @@ image jess sad:
     zoom 0.5
 
 image jess smile2:
-    "images/jess/smile2.png"
+    "images/jess/jess smile2.png"
+    zoom 0.5
+
+image jess smug:
+    "images/jess/jess smug.png"
     zoom 0.5
 
 image miho smile:
@@ -544,7 +548,7 @@ menu:
     "...":
         jump choices1C
 
-
+$ Feel = False
 
 label choices1A:
 
@@ -580,6 +584,7 @@ label choices1common:
    jump result1common
 
   elif G1Trust == 1 and G1Respect == 1:
+   $ Feel = True 
    G1 "{cps=44}I have to go.{/cps}{nw}"
    extend "\n{cps=44}My time is too precious to waste on someone like you.{/cps}{w=1.5}"
    jump result1common
@@ -1799,6 +1804,8 @@ Ash "{cps=24}Okay I won't.{/cps}"
 
 M1 "{cps=24}Okay....Let's think about something else, what do you like to do?{/cps}"
 
+$ Light = False
+
 menu:
     "Flirt with unsuspecting victims of mine.":
        jump choice6scare
@@ -1830,6 +1837,7 @@ label choice6nerd:
     jump choice6common
 
 label choice6life:
+    $ Light = True  
     $M1Affection=+0.25
     $M1Respect=+0.5
     $M1Love=+0.25
@@ -1844,7 +1852,7 @@ label choice6all:
 
 label choice6common:
 
- M1 "{cps=24}Hmmn. I'm a big fan of novels, cooking and music!{/cps}"
+M1 "{cps=24}Hmmn. I'm a big fan of novels, cooking and music!{/cps}"
 
 Ash "{cps=24}Are you a fan of visual novels by chance?{/cps}"
 
@@ -2136,22 +2144,291 @@ Ash "{cps=24}hmm...What's that sound?{/cps}"
 
 play audio "audio/girlhum.mp3"
 
-Ash "{cps=24}Hey{/cps}"
+centered "{cps=24}Ash opens his eyes slowly but surely.{/cps}"
 
+show jess shocked with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
 
+show miho frownblush with dissolve:
+      xpos 0.80 xanchor 1.0
+      yalign 1
+      yoffset 650
 
+G1 "{cps=24}Again...You were with \"{b}HIM!{/b}\" and sleeping cozy next to that {b}CREEEP!{/b}{/cps}"
 
+M1 "{cps=24}NO- IT'S NOT LIKE THAT! AND HE ISN'T A CREEP!{/cps}"
 
+Ash "{cps=24}Uh....{/cps}"
 
+Ash "{cps=24}What's going on...{/cps}"
 
+show jess smug with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
 
+show miho smileblush with dissolve:
+      xpos 0.80 xanchor 1.0
+      yalign 1
+      yoffset 650
 
+G1 "{cps=24}I was confronting Little miss Hussy around here for being all lovey dovey with an idiot like you!{/cps}{w=1}{nw}"
+extend "\n{cps=24}Which a girl like her shouldn't! You've defiled her mind I'm sure of it.{/cps}"
 
+M1 "{cps=37}Calling me a Hussy?! That's going too far, you old dimwit smooth brained floozy!{/cps}"
 
+G1 "{cps=44}YOU! YOU! YOU DARE YOU PEASANT IDIOT GIRL. INEPT, ILLOGICAL, IRRATIONAL, UNDESIRED {b}B####!{/b}{/cps}"
 
+M1 "{cps=44}YOUUU!!!!!!!{/cps}"
 
+Ash "{cps=33}....PLEASE DON'T FIGHT!{/cps}"
 
+M1 "{cps=55}OH NO! IT'S ON!{/cps}"
 
+G1 "{cps=55}IT'S ON!{/cps}"
+
+Ash "{cps=55}NO-{/cps}"
+
+centered "{cps=55}Jess & Miho:{b}WHY SHOULD WE MISTER!!{/b}{/cps}"
+
+Ash "{cps=24}First things first. It wasn't anything like that. We just watched anime together and fell asleep.{/cps}{w=1}{nw}"
+extend "\n{cps=37}{b}I'M NOT A CREEP, NOT A PERVERT NOR WEIRD. YOU TWO SHOULD ACT MORE IKE YOU AGE!{/b}{/cps}"
+
+G1 "{cps=45}I'M A LADY OF HIGH STATUS WHY SHOULD I LI-{/cps}"
+
+Ash "{cps=45}BECAUSE LADY, PRINCESS, ROYAL WHATEVER!!! YOU SHOULD ACT DIGNIFIED REGARDLESS, ESPECIALLY SINCE YOU'RE WHATEVER YOU SAY!{/cps}"
+
+G1 "{cps=24}...Yeah, as creepy as you are. You're right.{/cps}"
+
+G1 "{cps=24}I'm sorry Miho. I shouldn't have said that.{/cps}"
+
+M1 "{cps=24}Yes...I'm sorry too. I've said some pretty awful things.{/cps}"
+
+G1 "{cps=24}It's fine, We'll consider it even.{/cps}"
+
+show jess smug with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
+
+centered "{cps=2}...{/cps}"
+
+Ash "{cps=24}Woah...That Actually worked?!{/cps}"
+
+G1 "{cps=24}Of course It did! I'm not barbaric or unreasonable?{/cps}"
+
+M1 "{cps=24}Yeah. That's just plain rude.{/cps}"
+
+Ash "{cps=24}I didn't mean it that way!{/cps}"
+
+M1 "{cps=24}I know!{/cps}"
+
+G1 "{cps=24}Anyways. Where you two really not doing something suspicious?{/cps}"
+
+Ash "{cps=24}let me put into your terms. Why would a peasant like me try to see a few minutes of comfort when he can not be creep,{/cps}{w=1}{nw}"
+extend "\n{cps=24}and revel in the company of a maiden such as yourself for weeks, months or years on end?{/cps}"
+
+G1 "{cps=24}...For scum you surprisingly make a logical point that only scum like you would think of.{/cps}"
+
+M1 "{cps=24}I think you're just making it worse Ash..{/cps}"
+
+Ash "{cps=24}I think I'm clarifying.{/cps}"
+
+M1 "{cps=24}She doesn't seem to think so.{/cps}"
+
+G1 "{cps=24}I seem to think so.{/cps}"
+
+Ash "{cps=24}Take that Miho!{/cps}"
+
+G1  "{cps=24}Don't think me agreeing with you is good!{/cps}"
+
+Ash "{cps=24}Considering you addressed me with \"Creep\" constantly before,{/cps}{w=1}{nw}"
+extend "{cps=24}I consider this a huge win!{/cps}"
+
+M1 "{cps=24}Somehow I feel that's just intune with your personality as always.{/cps}"
+
+centered "{cps=14}{b}...I see you, and I hear you. In this reality, you musn't only make choices for yourself, but depending on your choices...{/b}{/cps}"
+extend "{cps=14}You must also choose the fate of others......That is all.{/cps}"
+
+menu:
+    "Jess: I think so too surprisingly.": 
+        jump choice7wow
+    "Jess: How do you know that much about him already?" if $ Feel = True:
+        jump choice7win
+    "Jess: It isn't." if $ Light = True:
+        jump choice7none
+
+label choice7wow:
+
+    Ash "{cps=24}You really do?{/cps}"
+
+    show jess smile with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
+
+    G1 "{cps=24}I do. Even I have to admit it.{/cps}"
+
+    show jess smile2 with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
+
+    jump choice7common
+    
+label choice7win:
+    
+    M1 "{cps=24}Just spend a minute with him to get to know him!{/cps}"
+
+    G1 "{cps=24}With him?{/cps}{w=1}{nw}"
+    extend "\n{cps=34}alone?!{/cps}{w=1}{nw}"
+    extend "\n{cps=55}NEVER!{/cps}{w=1}"
+
+    M1 "{cps=24}I never specified that you'd have to be {b}alone{/b} with him.{/cps}"
+    
+    G1 "{cps=57}{b}WHA-{/b}{/cps}"
+    extend "\n{cps=37}{b}JUST FORGET IT{/b}{/cps}"  
+    
+    jump choice7common
+
+label choice7none:
+    
+    M1 "{cps=24}Really? But it is!{/cps}"
+      
+    G1 "{cps=24}It isn't if you see things as close as I do.{/cps}"
+
+    M1 "{cps=24}I don't think so.{/cps}{w=1}{nw}"
+    extend "\n{cps=24}If you really spent time with him you'd see.{/cps}"
+
+    G1 "{cps=14}But.{/cps}{w=1}{nw}"
+    extend "\n{cps=12}That just isn't true. Is it peasant?{/cps}"
+
+    Ash "{cps=2}...Y-{/cps}"
+
+    G1 "{cps=45}Either way, It doesn't matter.{/cps}"
+
+    jump choice7common
+
+label choice7common:
+
+Ash "{cps=24}I know that you might not like me much.{/cps}{w=1}{nw}"
+extend "{cps=24}But I want to maintain a good relationship with you and Miho.{/cps}{w=1}{nw}"
+extend "{cps=24}That's an invaluable truth of my conviction as both a man,{/cps}{w=1}{nw}"
+extend "{cps=24}And as someone who stands before you.{/cps}{w=1}"
+
+M1 "{cps=24}I want to say that I feel the same.{/cps}{w=1}{nw}"
+extend "{cps=24}except that I'm not a man{/cps}."
+
+G1 "{cps=24}As a Man you say, huh.{/cps}"
+
+show jess sleepy with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
+
+G1 "{cps=24}It doesn't matter anyway.{/cps}"
+
+show jess normal with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
+
+Ash "{cps=24}I guess that's a No.{/cps}{nw}"
+
+G1 "{cps=24}No.{/cps}{nw}"
+
+Ash "{cps=44}.........{/cps}{nw}"
+
+M1 "{cps=50}Don't be down Ash, Sh-{/cps}{nw}"
+
+show jess smug with dissolve:
+      xpos 1.0 xanchor 1.0
+      yalign 1
+      yoffset 600
+
+G1 "{cps=55}{b}NO.{/b}{/cps}{w=1}{nw}"
+extend "{cps=37}{b}It's a resounding Yes.{/b}{/cps}"
+
+M1 "{cps=24}THAT'S UNEXPECTED!{/cps}"
+
+Ash "{cps=24}It isn't unexpected. Or is it Miss Jess?{/cps}"
+
+G1 "{cps=24}You're as perceptive as I thought.{/cps}"
+
+Ash "{cps=24}Same goes for you princess.{/cps}"
+
+M1 "{cps=24}I feel more chemistry than even you thought I had with him!{/cps}{nw}{w=1}"
+extend "{cps=24}Are you two maybe an item?{/cps}"
+
+centered "{cps=55}Both scream in unison: {b}{i}ABSOLUTELY NOT!{/i}{/b}{/cps}"
+
+centered "{cps=1}...{/cps}"
+
+Ash "{cps=24}Still it's pretty annoying, that \"peasant\" talk of yours.{/cps}"
+
+G1 "{cps=24}I'll try my best to improve. From now on you're a commoner.{/cps}"
+
+M1 "{cps=24}That...Isn't really better now is it?{/cps}"
+
+G1 "{cps=24}It's what I can do at most.{/cps}"
+
+Ash "{cps=24}It's good enough for me.{/cps}"
+
+M1 "{cps=24}Well, that's great and all. But now that you two are friends?{/cps}{w=1}{nw}"
+extend "\n{cps=24}I have to say that I'm getting bored.{/cps}"
+
+G1 "{cps=24}Now that you talk about it, it was certainly getting frustratingly boring bantering with the peasant.{/cps}"
+
+M1 "{cps=24}If you guys also want to get to know eachother. I have a great idea!{/cps}"
+
+G1 "{cps=24}What is it? I hope it isn't something stupid.{/cps}"
+
+Ash "{cps=24}Yeah, I'm curious too.{/cps}"
+
+M1 "{cps=24}How about we watch a movie together?{/cps}"
+
+G1 "{cps=24}That's actually not a bad idea.{/cps}"
+
+M1 "{cps=24}I know right!{/cps}"
+
+G1 "{cps=24}What genre?{/cps}"
+
+M1 "{cps=24}Let me check my anime list.{/cps}"
+
+G1 "{cps=24}...{b}WE'RE GONNA WATCH AN ANIME MOVIE?{/b}{/cps}"
+
+M1 "{cps=24}Yes?{/cps}"
+
+G1 "{cps=24}I DON'T WATCH ANIME!!! A PERSON LIKE ME NEVER WOULD.{/cps}"
+
+Ash "{cps=24}?{/cps}{w=1}{nw}"
+extend "{cps=24}How about this? Give it a chance, If you don't like it. We'll never do it again.{/cps}"
+
+G1 "{cps=24}That's fine by me.{/cps}"
+
+Ash "{cps=24}Miho!{/cps}"
+
+M1 "{cps=24}Yeah?!{/cps}"
+
+Ash "{cps=24}Choose a good one!{/cps}"
+
+M1 "{cps=24}AYE AYE SIR! (Anyone who understood this reference please send me a marriage proposal.){/cps}"
+
+centered "{cps=24}After sometime, Miho chooses a movie and they all sit down together. Ash brings some popcorn.{/cps}"
+
+Ash "{cps=24}Here you go girls.{/cps}"
+
+G1 "{cps=24}Where did you get buttered and sweetened popcorn from?{/cps}"
+
+Ash "{cps=24}Oh that's quite simple. I made it. And take some lemonade too.{/cps}"
+
+M1 "{cps=24}You know how to cook? That's a surprisingly good skill that guys don't usually have.{/cps}"
+
+G1  "{cps=24}It's simple but that was unexpected for someone like you.{/cps}"
+
+Ash "{cps=24}Anyways let's go!{/cps}"
 
 
 
