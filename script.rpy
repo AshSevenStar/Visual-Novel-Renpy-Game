@@ -3,6 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
   
+
+
+
 init:
     style say_dialogue:
         color "#002C66"
@@ -132,6 +135,8 @@ style say_side_image:
         ysize 400
 
 
+default light = False
+default feel = False
 default catfed = False
 default G1Affection = 0
 default G1Trust = 0
@@ -240,6 +245,11 @@ image jess smile2:
 image jess smug:
     "images/jess/jess smug.png"
     zoom 0.5
+
+image jess smile:
+    "images/jess/jess smug.png"
+    zoom 0.5
+
 
 image miho smile:
     "images/miho/Miho Winter Uniform/Miho smile.png"
@@ -548,7 +558,6 @@ menu:
     "...":
         jump choices1C
 
-$ Feel = False
 
 label choices1A:
 
@@ -1804,8 +1813,6 @@ Ash "{cps=24}Okay I won't.{/cps}"
 
 M1 "{cps=24}Okay....Let's think about something else, what do you like to do?{/cps}"
 
-$ Light = False
-
 menu:
     "Flirt with unsuspecting victims of mine.":
        jump choice6scare
@@ -2255,9 +2262,9 @@ extend "{cps=14}You must also choose the fate of others......That is all.{/cps}"
 menu:
     "Jess: I think so too surprisingly.": 
         jump choice7wow
-    "Jess: How do you know that much about him already?" if $ Feel = True:
+    "Jess: How do you know that much about him already?" if feel == True:
         jump choice7win
-    "Jess: It isn't." if $ Light = True:
+    "Jess: It isn't." if light == True:
         jump choice7none
 
 label choice7wow:
@@ -2314,12 +2321,12 @@ label choice7none:
 label choice7common:
 
 Ash "{cps=24}I know that you might not like me much.{/cps}{w=1}{nw}"
-extend "{cps=24}But I want to maintain a good relationship with you and Miho.{/cps}{w=1}{nw}"
-extend "{cps=24}That's an invaluable truth of my conviction as both a man,{/cps}{w=1}{nw}"
-extend "{cps=24}And as someone who stands before you.{/cps}{w=1}"
+extend "\n{cps=24}But I want to maintain a good relationship with you and Miho.{/cps}{w=1}{nw}"
+extend "\n{cps=24}That's an invaluable truth of my conviction as both a man,{/cps}{w=1}{nw}"
+extend "\n{cps=24}And as someone who stands before you.{/cps}{w=1}"
 
 M1 "{cps=24}I want to say that I feel the same.{/cps}{w=1}{nw}"
-extend "{cps=24}except that I'm not a man{/cps}."
+extend "\n{cps=24}Except that I'm not a man{/cps}."
 
 G1 "{cps=24}As a Man you say, huh.{/cps}"
 
@@ -2335,32 +2342,32 @@ show jess normal with dissolve:
       yalign 1
       yoffset 600
 
-Ash "{cps=24}I guess that's a No.{/cps}{nw}"
+Ash "{cps=24}I guess that's a No.{/cps}"
 
-G1 "{cps=24}No.{/cps}{nw}"
+G1 "{cps=24}No.{/cps}"
 
-Ash "{cps=44}.........{/cps}{nw}"
+Ash "{cps=30}.........{/cps}"
 
-M1 "{cps=50}Don't be down Ash, Sh-{/cps}{nw}"
+M1 "{cps=27}Don't be down Ash, Sh-{/cps}"
 
 show jess smug with dissolve:
       xpos 1.0 xanchor 1.0
       yalign 1
       yoffset 600
 
-G1 "{cps=55}{b}NO.{/b}{/cps}{w=1}{nw}"
-extend "{cps=37}{b}It's a resounding Yes.{/b}{/cps}"
+G1 "{cps=24}{b}NO.{/b}{/cps}{w=3}{nw}"
+extend "\n{cps=24}{b}It's a resounding Yes.{/b}{/cps}"
 
 M1 "{cps=24}THAT'S UNEXPECTED!{/cps}"
 
-Ash "{cps=24}It isn't unexpected. Or is it Miss Jess?{/cps}"
+Ash "{cps=24}It's unexpected. Or is it Jess?{/cps}"
 
-G1 "{cps=24}You're as perceptive as I thought.{/cps}"
+G1 "{cps=24}You're as sharp as I thought.{/cps}"
 
 Ash "{cps=24}Same goes for you princess.{/cps}"
 
 M1 "{cps=24}I feel more chemistry than even you thought I had with him!{/cps}{nw}{w=1}"
-extend "{cps=24}Are you two maybe an item?{/cps}"
+extend "\n{cps=24}Are you sure two aren't a thing?{/cps}"
 
 centered "{cps=55}Both scream in unison: {b}{i}ABSOLUTELY NOT!{/i}{/b}{/cps}"
 
@@ -2404,7 +2411,7 @@ M1 "{cps=24}Yes?{/cps}"
 G1 "{cps=24}I DON'T WATCH ANIME!!! A PERSON LIKE ME NEVER WOULD.{/cps}"
 
 Ash "{cps=24}?{/cps}{w=1}{nw}"
-extend "{cps=24}How about this? Give it a chance, If you don't like it. We'll never do it again.{/cps}"
+extend "\n{cps=24}How about this? Give it a chance, If you don't like it. We'll never do it again.{/cps}"
 
 G1 "{cps=24}That's fine by me.{/cps}"
 
@@ -2418,7 +2425,7 @@ M1 "{cps=24}AYE AYE SIR! (Anyone who understood this reference please send me a 
 
 centered "{cps=24}After sometime, Miho chooses a movie and they all sit down together. Ash brings some popcorn.{/cps}"
 
-Ash "{cps=24}Here you go girls.{/cps}"
+Ash "{cps=24}Here you go.{/cps}"
 
 G1 "{cps=24}Where did you get buttered and sweetened popcorn from?{/cps}"
 
@@ -2428,13 +2435,266 @@ M1 "{cps=24}You know how to cook? That's a surprisingly good skill that guys don
 
 G1  "{cps=24}It's simple but that was unexpected for someone like you.{/cps}"
 
-Ash "{cps=24}Anyways let's go!{/cps}"
+Ash "{cps=24}I think you should be saying \"less talking more eating.\" Followed by, let's start already.{/cps}"
+
+G1 "{cps=2}...{/cps}{w=1}{nw}"
+extend "\n{cps=24}Less talking more eating. Let's start already!{/cps}"
+
+show ash smirk with dissolve
+
+Ash "{cps=37}Now you're talking!{/cps}"
+
+M1 "{cps=37}Yay!{/cps}"
+
+centered "{cps=24}They all 3 watch the movie and continue on for 30 mins.{/cps}"
+
+G1 "{cps=24}This has surprisingly been...awesome.{/cps}"
+
+M1 "{cps=24}I'm so happy you liked it.{/cps}"
+
+Ash "{cps=24}I think she's on ourside.{/cps}"
+
+M1 "{cps=24}Yeah!{/cps}"
+
+G1 "{cps=24}On your side? You think so? Well, that isn't the case.{/cps}"
+
+G1 "{cps=24}But. I know this. That I'm starting to like your entertainment a lot more.{/cps}"
+
+Ash "{cps=24}That's fine by me! It's my greatest achievement yet!{/cps}"
+
+M1 "{cps=24}What's your favourite part?{/cps}"
+
+Ash "{cps=24}I like it when they reunite!{/cps}"
+
+G1 "{cps=24}I loved it when they exchanged letters. It wasn't romantic, it was heartwretching.{/cps}"
+
+G1 "{cps=24}The way they cared about eachother! Constantly, whether afar, driven to war, or in times of isolated peace.{/cps}"
+
+G1 "{cps=24}That's the meaning of love. To love is to do your best for the other person, and nothing can top that.{/cps}"
+
+Ash "{cps=24}Wow, didn't expect you to be a romanticist?{/cps}{w=1}{nw}"
+extend "\n{cps=25}Though, I'm really the same.{/cps}"
+extend "\n{cps=24}I'd consider it even more than that. Love is without limits.{/cps}"
+
+M1 "{cps=24}As they say beauty of affection is beyond words.{/cps}"
+
+centered "{cps=24}They continued talking on and on for an hour or so.{/cps}"
+
+Ash "{cps=24}That was a really good movie.{/cps}"
+
+G1 "{cps=24}It was quite a surprise. It was good even with the comedy.{/cps}"
+
+M1 "{cps=24}I'm glad you guys liked it! It was my first time watching this too.{/cps}"
+
+G1 "{cps=24}So what are watching next?{/cps}"
+
+Ash "{cps=24}You want to watch another one?{/cps}"
+
+M1 "{cps=24}Me too!{/cps}"
+
+Ash "{cps=24}If that's what you guys want.{/cps}"
+
+Ash "{cps=24}Let me just go for a quick bathroom break.{/cps}"
+
+scene bg lrd
+
+centered "{cps=24}He went out to the bathroom. And freshend up.{/cps}"
+
+centered "{cps=24}Ash thinks to himself:{/cps}"
+
+centered "{cps=24}\"It's been fun hanging out and watching movies with them.\"{/cps}"
+
+centered "{cps=24}\"It seems a common interest is what allows us all to be friendly, especially with Jess.\"{/cps}"
+
+centered "{cps=24}\"It's fun but it's getting boring.\"{/cps}"
+
+centered "{cps=24}\"I should probably get back, although for some reason I feel uneasy.\"{/cps}"
+
+scene bg lrnl
+
+show ash normal at right with dissolve
+
+Ash "{cps=24}I'm back!{/cps}"
+
+Ash "{cps=24}It seems like they started without me.{/cps}{w=1}{nw}"
+extend "\n{cps=24}And it seems they fell asleep.{/cps}"
+
+Ash "{cps=24}Well, it was definitely getting late.{/cps}"
+
+centered "{cps=24}Ash grabbed the blanket, tidied it up and put it over them.{/cps}"
+
+centered "{cps=24}Ash then grabs Miho's tablet, turns it off and lays it on the side.{/cps}"
+
+centered "{cps=24}Ash then moves toward his bedroom.{/cps}"
+
+scene bg mcr
+
+centered "{cps=24}Well, like always it seems, I'm alone once again.{/cps}"
+
+centered "{cps=24}It's a bit saddening being away from someone you can talk to.{/cps}"
+
+"{cps=24}And sadness always reminds me of guilt.{/cps}"
+
+"{cps=24}Which reminds me...of that one time I got scammed as a student. I remember just how angry dad was with me.{/cps}"
+
+"{cps=24}And how much he despised my existence.{/cps}"
+
+"{cps=24}I always tried my best to get along with him, make him happy, and be like a \"normal\" dad and son.{/cps}"
+
+"{cps=24}It didn't take me long to realize, but I was just denying it...That dad...never wanted me.{/cps}"
+
+"{cps=24}It's not that my mother or sister were any different. My head still aches for a reason.{/cps}"
+
+"{cps=24}I'm not saying a country like this place, japan, is perfect.{/cps}"
+
+"{cps=24}But...It'd be a lot easier for a person to run away, and live on their own.{/cps}"
+
+"{cps=24}The luxury of such places isn't a guarantee in security.{/cps}"
+
+"{cps=24}It's more of a chance to fight back, it's a guarantee of more opportunities.{/cps}"
+
+"{cps=24}People tend to assume those who haven't succeeded have failed.{/cps}"
+
+"{cps=24}People tend to assume that people's lack of success is attributed to their own ignorance & idiocy.{/cps}"
+
+"{cps=24}But they never look back, and see.{/cps}"
+
+"{cps=24}That not everyone has been dealt the same cards.{/cps}"
+
+"{cps=24}And that's an undeniable truth that people don't want to accept.{/cps}"
+
+"{cps=24}Or even worse, they don't care.{/cps}"
+
+"{cps=24}There's great pain in life that some won't ever receive.{/cps}"
+
+"{cps=24}And there's great joy that some won't ever comprehend.{/cps}"
+
+"{cps=24}I just hope that joy is something I could comprehend.{/cps}"
+
+"{cps=24}Will I ever be able to?{/cps}"
+
+menu:
+    "I will.":
+        jump choice8believe
+    "I won't.":
+        jump choice8sad
+    "Maybe.":
+        jump choice8perhaps
+
+label choice8believe:
+    
+    jump choice8common
+
+label choice8sad:
+
+    jump choice8common
+
+label choice8perhaps:
+
+    jump choice8common
 
 
+label choice8common:
 
+"{cps=24}I'd like to believe anyways.{/cps}"
 
+"{cps=24}Because that's what makes me, me.{/cps}"
 
+"{cps=24}I believe.{/cps}"
 
+"{cps=3}I...{/cps}"
+
+"{cps=24}Try to...{/cps}"
+
+"{cps=24}Does it matter? I'm still gonna be a loser if I don't feel alive.{/cps}"
+
+"{cps=24}Just believing isn't enough. Just living isn't enough.{/cps}"
+
+"{cps=24}Living and believing is. That's why I've been praying, praying hard.{/cps}"
+
+"{cps=24}But sometimes I think.{/cps}"
+
+"{cps=24}Maybe. Just maybe. If I forget the world.{/cps}"
+
+"{cps=24}And live my way, I'll start to live and feel alive.{/cps}"
+
+"{cps=24}But I'm not a prodigy. I had my chances but I'm not as young anymore.{/cps}"
+
+"{cps=24}Nor am I rich. I literally can't afford to make mistakes.{/cps}"
+
+"{cps=24}but to think of it. There's millions more on this planet like me.{/cps}"
+
+"{cps=24}In the same situation, or close enough.{/cps}"
+
+"{cps=24}So what can I do? to be different?{/cps}"
+
+"{cps=24}Maybe I should go back to my roots. My Old Self.{/cps}"
+
+"{cps=24}That worked out great.{/cps}"
+
+"{cps=24}but that was when I was a child.{/cps}"
+
+"{cps=24}But...Adolescents and Adults...are often more stupid.{/cps}"
+
+"{cps=24}Adulthood isn't just age, is it.{/cps}"
+
+"{cps=24}The difference between them is, an adult lives to survive, and a child survives to live.{/cps}"
+
+"{cps=24}At least for myself. I have only felt more dumber as I've aged.{/cps}"
+
+"{cps=24}Children will always have something adults never will, and something they try to put down.{/cps}"
+
+"{cps=24}Imagination, curiosity, and unrestricted joy.{/cps}"
+
+"{cps=24}Well forgetting all the philosophy and mopping around.{/cps}"
+
+"{cps=24}I really was a genius, wasn't I?{/cps}"
+
+"{cps=24}Or did I really just like learning?{/cps}"
+
+"{cps=24}I know it's the latter, but still, 3 languages & a half languages at 3 is pretty impressive.{/cps}"
+
+"{cps=24}Speaking of childhood...What's up with Jess?{/cps}"
+
+"{cps=24}She doesn't seem like a bad person. She might be from a reserved family.{/cps}"
+
+"{cps=24}Or she might be from a rich family.{/cps}"
+
+"{cps=24}She might even be a rich princess or the daughter of the president.{/cps}"
+
+"{cps=24}Either way I'm not Keon Lennedy, or Kiyate Ayasaha so It'll be difficult getting along with her.{/cps}"
+
+"{cps=24}Miho is a nice girl, even if a bit eccentric. She could help me with Jess.{/cps}"
+
+"{cps=24}But that still wouldn't fix our awkward relationship.{/cps}"
+
+"{cps=24}Maybe We could have a gaming session together?{/cps}"
+
+"{cps=24}No, I don't have a console.{/cps}"
+
+"{cps=24}Maybe we could visit an arcade together?{/cps}"
+
+"{cps=24}No. I haven't been to one myself in japan. And I don't want to encounter any shady dudes.{/cps}"
+
+"{cps=24}Plus she probably wouldn't like a place like that.{/cps}"
+
+"{cps=24}OH! WHAT ABOUT A RESTAURANT?{/cps}"
+
+"{cps=24}Wait. I'm broke.{/cps}"
+
+"{cps=24}And she'd think I'm inviting her on a date, and I don't want to lose my manhood just yet.{/cps}"
+
+"{cps=24}I don't know. I don't understand girls my age.{/cps}"
+
+"{cps=24}OH MY GOD! I KNOW!{/cps}"
+
+"{cps=24}How about we end this demo right here! And continue this stupidly long monologue next time?{/cps}"
+
+"{cps=24}Ps. I got scammed when buying a drawing tablet so my parents will prob eliminate me from this plain of existence.{/cps}"
+
+"{cps=24}Which means It'll probably take even more time for me to implement my own art into the game so I apologize.{/cps}"
+
+"{cps=24}Please pray for me to survive a whooping or two, that's it for now folks! Ash out!{/cps}"
 
 "Temporary Credits: https://mochikuro.itch.io/visual-novel-character-sprite-p01 For Mio"
 "https://sutemo.itch.io/ for Both Ash and jess"
