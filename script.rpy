@@ -134,7 +134,8 @@ style say_side_image:
         xsize 400
         ysize 400
 
-
+default AshHealth = 0
+default AshFun = 0
 default light = False
 default feel = False
 default catfed = False
@@ -593,7 +594,7 @@ label choices1common:
    jump result1common
 
   elif G1Trust == 1 and G1Respect == 1:
-   $ Feel = True 
+   $ feel = True 
    G1 "{cps=44}I have to go.{/cps}{nw}"
    extend "\n{cps=44}My time is too precious to waste on someone like you.{/cps}{w=1.5}"
    jump result1common
@@ -1844,7 +1845,7 @@ label choice6nerd:
     jump choice6common
 
 label choice6life:
-    $ Light = True  
+    $ light = True  
     $M1Affection=+0.25
     $M1Respect=+0.5
     $M1Love=+0.25
@@ -2686,15 +2687,142 @@ label choice8common:
 
 "{cps=24}I don't know. I don't understand girls my age.{/cps}"
 
-"{cps=24}OH MY GOD! I KNOW!{/cps}"
+"{cps=24}I still have time to think.{/cps}"
 
-"{cps=24}How about we end this demo right here! And continue this stupidly long monologue next time?{/cps}"
+"{cps=24}......{/cps}"
 
-"{cps=24}Ps. I got scammed when buying a drawing tablet so my parents will prob eliminate me from this plain of existence.{/cps}"
+"{cps=24}But again...what can I do exactly?{/cps}"
 
-"{cps=24}Which means It'll probably take even more time for me to implement my own art into the game so I apologize.{/cps}"
+"{cps=24}...{/cps}"
 
-"{cps=24}Please pray for me to survive a whooping or two, that's it for now folks! Ash out!{/cps}"
+"{cps=24}Maybe...{/cps}{w=1}{nw}"
+extend "\n{cps=24}I should spend time showing her something related to me.{/cps}"
+
+"{cps=24}Yeah, Two birds with one stone..{/cps}"
+
+"{cps=24}I'll entertain her and show her who I really am at the same time.{/cps}"
+
+"{cps=24}At the same time, I remember someone told me \"Be Anyone but Yourself.\"{/cps}"
+
+"{cps=24}I've been doing what others do for a while now.{/cps}"
+
+"{cps=24}So It's only fair if listen to my stupid heart again....{/cps}{w=1}{nw}"
+"\n{cps=24}Just once more...{/cps}"
+
+"{cps=24}Then again.{/cps}{w=1}{nw}"
+extend "\n{cps=24}What kind of man am I?{/cps}"
+
+"{cps=24}That's the question everybody except me seems to know.{/cps}"
+
+"{cps=24}I think I used to know too...{/cps}"
+extend "{cps=24}...used to.{/cps}"
+
+"{cps=24}Can I really present myself when I don't recognize the present me?{/cps}"
+
+centered "{cps=24}Ash looks into the mirror{/cps}"
+
+centered "{cps=24}He sees a canvas of distorted figure.{/cps}"
+
+centered "{cps=24}It turns into a sharper image{/cps}"
+
+centered "{cps=24}Getting sharper, and sharper still...{/cps}"  
+
+centered "{cps=24}Until it resembles a person{/cps}"
+
+centered "{cps=24}As soon as Ash sees it, he feels something...{/cps}"
+
+centered "{cps=24}Nothingness...{/cps}"
+
+centered "{cps=24}Then....... a sudden urge to vomit.{/cps}"
+
+"..."
+
+Ash "{cps=24}I...don't think...{/cps}{w=1}{nw}"
+
+Ash "\n{cps=24}...I want to know...myself.{/cps}"
+
+Ash "{cps=24}It's weird...{/cps}"
+
+Ash "{cps=24}I want to know but at the same time...I don't.{/cps}"
+
+Ash "{cps=24}I guess...I'll be someone else for now.{/cps}"
+
+Ash "{cps=24}I'll try to better...{/cps}"
+
+Ash "{cps=24}How about someone witty, observant and charming?{/cps}"
+
+Ash "{cps=24}The first to I can manage, the latter will make me look like a dumbass creep.{/cps}"
+
+Ash "{cps=24}That's all I can try. It's not like I can act like gym bro or a spoiled brat.{/cps}"
+
+Ash "{cps=24}Huh...It's All I Can Try!{/cps}"
+
+Ash "{cps=24}I think I know what I can do.{/cps}"
+
+Ash "{cps=24}But it's gonna take a lot of preparation.{/cps}"
+
+Ash "{cps=24}Ash's Mind:{/cps}"
+
+
+menu: 
+    "You miss one hundred percent of the shots you don't take.":
+        jump choice9nomiss
+    "Time's ticken, better to get some rest early.":
+        jump choice9regrets
+
+label choice9nomiss:
+
+ $ AshFun += 1
+
+ Ash "{cps=24}I'm going to do it anyway.{/cps}"
+
+ Ash "{cps=24}It's still 6:30 pm.{/cps}"
+
+ Ash "{cps=24}Better get to work.{/cps}"
+
+ jump choice9common
+
+label choice9regrets:
+
+ $ AshHealth += 1 
+
+ Ash "{cps=24}It's early but considering I have really big eyebags...{/cps}"
+
+ Ash "{cps=24}Yeah...I should sleep.{/cps}"
+
+ Ash "{cps=24}...but...I want to improve my relationship with her.{/cps}"
+
+ Ash "{cps=24}That's why...I should...do my best even if it get's me sleepy later.{/cps}
+
+ jump choice9common
+
+label choice9common:
+ 
+  Ash "{cps=24}I'll do as much as I can.{/cps}"
+ 
+  Ash "{cps=24}Let's see what we're cookin with.{/cps}"
+ 
+  Ash "{cps=24}Hmm. Some paprika, a bit of vinegar, cheese, eggs and yeast.{/cps}"
+
+  Ash "{cps=24}A bit of this and a bit of that.{/cps}"
+
+  Ash "{cps=24}I think I'll need some more cream.{/cps}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 "Temporary Credits: https://mochikuro.itch.io/visual-novel-character-sprite-p01 For Mio"
 "https://sutemo.itch.io/ for Both Ash and jess"
@@ -2713,4 +2841,5 @@ label choice8common:
 #explore and use plugins for effects?
 #Add blood and gore, lot's of it!!!!!!!!!!!!!!!!!!! for MIO!!!!!!!!!!!!!
 #Make things more spicy and surprising.
+
 
